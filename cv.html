@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Neela Madhu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── CV-SPECIFIC ── */
+    .cv-layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 var(--px);
+    }
+
+    .cv-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+    }
+
+    /* ── SECTION ── */
+    .cv-section {
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .cv-section-label {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--olive);
+      margin-bottom: 2rem;
+    }
+
+    /* ── EXPERIENCE ENTRY ── */
+    .exp-entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem 3rem;
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .exp-entry:first-of-type { border-top: none; padding-top: 0; }
+
+    .exp-company {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+
+    .exp-role {
+      font-size: 0.85rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .exp-date {
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      white-space: nowrap;
+      padding-top: 0.25rem;
+      text-align: right;
+    }
+
+    .exp-bullets {
+      grid-column: 1 / -1;
+      margin-top: -0.5rem;
+    }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
+      padding: 0.35rem 0 0.35rem 1.1rem;
+      position: relative;
+      border-top: 1px solid transparent;
+    }
+
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--border);
+      font-size: 0.75rem;
+      top: 0.42rem;
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+
+    .skill-row {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 1.5rem;
+    }
+
+    .skill-row:nth-child(even) { padding-left: 2rem; }
+
+    .skill-cat {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark);
+      line-height: 1.5;
+    }
+
+    .skill-items {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-entry {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 2rem;
+      padding: 1.75rem 0;
+      border-top: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .edu-entry:first-of-type { border-top: none; padding-top: 0; }
+
+    .edu-school {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .edu-degree {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--muted);
+      margin-top: 0.2rem;
+    }
+
+    .edu-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      padding-top: 0.25rem;
+    }
+
+    /* ── CERT / VOLUNTEER ── */
+    .cert-list, .vol-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cert-item, .vol-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.5rem 2rem;
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .cert-item:first-of-type,
+    .vol-item:first-of-type { border-top: none; padding-top: 0; }
+
+    .cert-name, .vol-name {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: var(--dark);
+    }
+
+    .cert-org, .vol-role {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 0.15rem;
+    }
+
+    .cert-year, .vol-year {
+      font-size: 0.75rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    /* ── TWO-COL LAYOUT for certs + volunteering ── */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 5rem;
+    }
+
+    .two-col-grid .cv-section { border-top: none; }
+    .two-col-grid .cv-section:first-child { border-right: 1px solid var(--border); padding-right: 5rem; }
+
+    /* ── SUMMARY BLOCK ── */
+    .summary-block {
+      padding: 3rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .summary-text {
+      font-family: var(--serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 300;
+      line-height: 1.45;
+      color: var(--dark);
+      max-width: 800px;
+    }
+
+    .summary-text em {
+      font-style: italic;
+      color: var(--olive);
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid { grid-template-columns: 1fr; }
+      .skill-row { grid-template-columns: 1fr; gap: 0.4rem; }
+      .skill-row:nth-child(even) { padding-left: 0; }
+      .two-col-grid { grid-template-columns: 1fr; }
+      .two-col-grid .cv-section:first-child { border-right: none; padding-right: 0; }
+    }
+
+    @media (max-width: 600px) {
+      .exp-entry { grid-template-columns: 1fr; }
+      .exp-date { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Neela Madhu</a>
+    <ul class="nav-links">
+      <li><a href="case-studies.html">Work</a></li>
+      <li><a href="cv.html" class="active">CV</a></li>
+      <li><a href="blog.html">Writing</a></li>
+      <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="cv-layout">
+
+      <!-- ══ PAGE HEADER ══ -->
+      <div class="page-header">
+        <div class="cv-header-row">
+          <div>
+            <span class="label">Curriculum Vitae</span>
+            <h1>Neela Madhu</h1>
+            <p>Design Project Manager &amp; Strategic Systems Thinker<br>
+              <a href="mailto:neelambari.am@gmail.com" style="color:var(--olive);">neelambari.am@gmail.com</a> &nbsp;·&nbsp;
+              647-766-3909 &nbsp;·&nbsp;
+              <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener" style="color:var(--olive);">LinkedIn</a>
+            </p>
+          </div>
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; align-self:flex-end;">
+            <a href="mailto:neelambari.am@gmail.com?subject=CV Request&body=Hi Neela," class="btn btn-dark" style="margin-bottom:0;">Request CV PDF <span>↓</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ SUMMARY ══ -->
+      <div class="summary-block">
+        <p class="summary-text">
+          Strategic systems thinker with experience across <em>clean technology</em>, design research,
+          and <em>infrastructure development</em>. Skilled at synthesizing complex, cross-disciplinary
+          inputs into frameworks and recommendations that drive decisions — across technical, spatial,
+          and organizational contexts. Thrives in ambiguous, high-stakes environments.
+        </p>
+      </div>
+
+      <!-- ══ EXPERIENCE ══ -->
+      <section class="cv-section">
+        <span class="cv-section-label">Experience</span>
+
+        <!-- Entry 1 -->
+        <div class="exp-entry">
+          <div>
+            <p class="exp-company">Can Grow Here, Inc.</p>
+            <p class="exp-role">Design Project Manager</p>
+          </div>
+          <p class="exp-date">Sept 2025 – Present</p>
+          <ul class="exp-bullets">
+            <li>Own building and systems design definition for a first-of-kind modular CEA facility engineered for 90% lower energy OpEx and 25% higher crop yield than conventional greenhouse infrastructure, supporting a proprietary platform targeting the $1.75B Canadian CEA market.</li>
+            <li>Direct a multi-institution R&D program across 7+ external teams — setting technical direction, evaluating research outputs, and determining what advances into Pilot and commercial MVP.</li>
+            <li>Lead PoC validation strategy by synthesizing insights across parallel R&D workstreams to define key technical and operational questions required for commercialization readiness.</li>
+            <li>Conduct techno-economic infrastructure modeling for commercial MVP development, evaluating spatial, growing, and pricing constraints across facility configurations.</li>
+            <li>Developed a waterfall decision framework mapping system interdependencies, capital constraints, and design tradeoffs — supporting leadership decision-making, investor engagement, and market validation.</li>
+            <li>Authored policy-informed research and thought leadership translating intersections of agri-food systems, clean energy, and the environment for sector audiences and funders.</li>
+            <li>Manage cross-sector stakeholder relationships across investors, farm operators, academic researchers, and government partners; oversee research contracts with Mitacs, NSERC, and OAFRI.</li>
+          </ul>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="exp-entry">
+          <div>
+            <p class="exp-company">Can Grow Here, Inc.</p>
+            <p class="exp-role">Research &amp; Design Associate</p>
+          </div>
+          <p class="exp-date">July 2024 – Sept 2025</p>
+          <ul class="exp-bullets">
+            <li>Built and maintained the architectural design foundation for the company's entire R&D program — developing 3D models and drawing packages in SketchUp that served as the primary technical input for CFD modeling, energy simulation, structural review, and growing layout/sunlighting studies.</li>
+            <li>Established the company's project management infrastructure from the ground up — building workflows, authoring PMPs for all external research programs, and creating cross-project tracking systems.</li>
+            <li>Executed comparative benchmarking of facility configurations across energy performance, constructability, and capital cost — contributing to techno-economic analysis that informed early Pilot and MVP design decisions.</li>
+            <li>Led supplier and vendor procurement across major building systems — evaluating proposals, consolidating pricing into BOM/FF&E documentation, and coordinating pre-construction groundwork including zoning review, site planning, and contractor RFPs.</li>
+          </ul>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="exp-entry">
+          <div>
+            <p class="exp-company">RGS Design &amp; Planning</p>
+            <p class="exp-role">Junior Designer</p>
+          </div>
+          <p class="exp-date">Sept 2023 – July 2024</p>
+          <ul class="exp-bullets">
+            <li>Owned full project lifecycle across multi-family residential projects — managing timelines, client relationships, contractor communications, and deliverables from concept through construction documentation.</li>
+            <li>Led design development including material and finish selection, procurement, budget tracking, and client-facing presentations and proposals.</li>
+          </ul>
+        </div>
+
+        <!-- Entry 4 -->
+        <div class="exp-entry">
+          <div>
+            <p class="exp-company">Audiential</p>
+            <p class="exp-role">Content Writer &amp; Editor</p>
+          </div>
+          <p class="exp-date">Dec 2020 – Jan 2022</p>
+          <ul class="exp-bullets">
+            <li>Researched and authored content across multiple industries and subject areas — developing fluency in rapidly synthesizing unfamiliar topics and translating complex information for specific audiences.</li>
+            <li>Managed full content lifecycles from research and strategic framing through publication, applying SEO strategy and audience segmentation across diverse client briefs.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ══ SKILLS ══ -->
+      <section class="cv-section">
+        <span class="cv-section-label">Skills</span>
+        <div class="skills-grid">
+          <div class="skill-row">
+            <span class="skill-cat">Systems &amp; Infrastructure</span>
+            <span class="skill-items">Techno-economic analysis, infrastructure modeling, scenario evaluation &amp; constraint mapping, capital planning, feasibility modeling</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-cat">Sustainability &amp; Environment</span>
+            <span class="skill-items">Clean energy systems, agri-food &amp; CEA, environmental policy research, low-carbon built environment, ecosystem analysis</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-cat">Design &amp; Spatial</span>
+            <span class="skill-items">Spatial planning &amp; analysis, 3D modeling &amp; technical documentation, design development, integration coordination</span>
+          </div>
+          <div class="skill-row">
+            <span class="skill-cat">Research &amp; Strategy</span>
+            <span class="skill-items">Research synthesis &amp; knowledge mobilization, policy-informed design strategy, cross-sectoral stakeholder engagement, comparative benchmarking</span>
+          </div>
+          <div class="skill-row" style="grid-column: 1 / -1;">
+            <span class="skill-cat">Technical</span>
+            <span class="skill-items">SketchUp &amp; LayOut &nbsp;·&nbsp; AutoCAD &nbsp;·&nbsp; Adobe Creative Suite &nbsp;·&nbsp; Microsoft Suite &nbsp;·&nbsp; ClickUp</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ EDUCATION ══ -->
+      <section class="cv-section">
+        <span class="cv-section-label">Education</span>
+
+        <div class="edu-entry">
+          <div>
+            <p class="edu-school">Ontario College of Art &amp; Design University</p>
+            <p class="edu-degree">Bachelor of Design in Environmental Design &amp; Interior Design (Distinction)</p>
+          </div>
+          <p class="edu-year">2022</p>
+        </div>
+
+        <div class="edu-entry">
+          <div>
+            <p class="edu-school">Delhi University, St. Stephen's College</p>
+            <p class="edu-degree">Bachelor of Arts in Philosophy (Honors)</p>
+          </div>
+          <p class="edu-year">2018</p>
+        </div>
+      </section>
+
+      <!-- ══ CERTS + VOLUNTEERING ══ -->
+      <div class="two-col-grid">
+        <section class="cv-section">
+          <span class="cv-section-label">Licenses &amp; Certifications</span>
+          <div class="cert-list">
+            <div class="cert-item">
+              <div>
+                <p class="cert-name">LEED Green Associate</p>
+                <p class="cert-org">U.S. Green Building Council</p>
+              </div>
+              <p class="cert-year">2024</p>
+            </div>
+            <div class="cert-item">
+              <div>
+                <p class="cert-name">AI × Design Thinking</p>
+                <p class="cert-org">IDEO U</p>
+              </div>
+              <p class="cert-year">2024</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="cv-section">
+          <span class="cv-section-label">Volunteering</span>
+          <div class="vol-list">
+            <div class="vol-item">
+              <div>
+                <p class="vol-name">ClimateFast</p>
+                <p class="vol-role">Researcher &amp; Analyst — Climate Voting Records Project</p>
+              </div>
+              <p class="vol-year">2025 – Present</p>
+            </div>
+            <div class="vol-item">
+              <div>
+                <p class="vol-name">OCAD University</p>
+                <p class="vol-role">Recurring Guest Critic</p>
+              </div>
+              <p class="vol-year">2025 – Present</p>
+            </div>
+            <div class="vol-item">
+              <div>
+                <p class="vol-name">D.Talks</p>
+                <p class="vol-role">Volunteer</p>
+              </div>
+              <p class="vol-year">2024 – Present</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <span class="label-muted">Contact</span>
+        <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
+        <a href="tel:6477663909">647-766-3909</a>
+        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+      <div class="footer-col">
+        <span class="label-muted">Navigate</span>
+        <a href="case-studies.html">Work</a>
+        <a href="cv.html">CV</a>
+        <a href="blog.html">Writing</a>
+      </div>
+      <div class="footer-col">
+        <span class="label-muted">Credentials</span>
+        <p>LEED Green Associate</p>
+        <p>BDes Environmental Design — OCAD</p>
+        <p>BA Philosophy — Delhi University</p>
+      </div>
+      <div class="footer-brand">
+        <p class="footer-name">Neela Madhu</p>
+        <p class="footer-sub">Toronto, Canada · 2026</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
