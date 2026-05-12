@@ -3,14 +3,14 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:       #F5F0E6;
-  --cream-dark:  #EDE6D4;
-  --dark:        #3D1900;
+  --cream:       #FAF6ED;
+  --cream-dark:  #F0E9D8;
+  --dark:        #3B4A34;
   --olive:       #A08D18;
   --sage:        #5D6B50;
   --sky:         #CFDDFF;
-  --border:      #D0C8B5;
-  --muted:       #9A9080;
+  --border:      #CEC6B2;
+  --muted:       #72685A;
   --card-bg:     #EDE5D1;
 
   --serif:  'Cormorant Garamond', Georgia, serif;
@@ -19,7 +19,7 @@
   --nav-h:  60px;
   --max-w:  1120px;
   --px:     clamp(1.5rem, 6vw, 5rem);
-  --py:     clamp(4rem, 8vw, 7rem);
+  --py:     clamp(2.5rem, 5vw, 4rem);
 }
 
 html { scroll-behavior: smooth; }
@@ -28,9 +28,9 @@ body {
   background: var(--cream);
   color: var(--dark);
   font-family: var(--sans);
-  font-weight: 300;
-  font-size: 1rem;
-  line-height: 1.65;
+  font-weight: 400;
+  font-size: 0.975rem;
+  line-height: 1.68;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -195,7 +195,7 @@ main { padding-top: var(--nav-h); min-height: 100vh; }
 
 footer {
   border-top: 1px solid var(--border);
-  padding: 3.5rem var(--px) 2.5rem;
+  padding: 2.5rem var(--px) 2rem;
   margin-top: var(--py);
 }
 
@@ -261,9 +261,9 @@ footer {
 ──────────────────────────────── */
 
 .page-header {
-  padding: clamp(3rem, 6vw, 5rem) 0 clamp(2.5rem, 5vw, 4rem);
+  padding: clamp(2rem, 4vw, 3rem) 0 clamp(1.5rem, 3vw, 2.5rem);
   border-bottom: 1px solid var(--border);
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
 .page-header .label { margin-bottom: 1rem; }

@@ -17,56 +17,52 @@
 
     .post-entry {
       display: grid;
-      grid-template-columns: 140px 1fr auto;
+      grid-template-columns: 140px 1fr;
       gap: 0 3rem;
-      padding: 2.75rem 0;
+      padding: 2.25rem 0;
       border-top: 1px solid var(--border);
       align-items: start;
-      transition: background 0.2s;
-      cursor: default;
     }
 
     .post-entry:hover .post-title { color: var(--olive); }
 
     .post-date {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       font-weight: 400;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       color: var(--muted);
-      padding-top: 0.35rem;
+      padding-top: 0.3rem;
       line-height: 1.5;
     }
 
-    .post-content {}
-
     .post-category {
-      font-size: 0.62rem;
+      font-size: 0.63rem;
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--olive);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
       display: block;
     }
 
     .post-title {
       font-family: var(--serif);
-      font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
       font-weight: 400;
       line-height: 1.2;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
       transition: color 0.2s;
     }
 
     .post-excerpt {
-      font-size: 0.875rem;
+      font-size: 0.9rem;
       color: var(--muted);
       line-height: 1.75;
-      max-width: 600px;
+      max-width: 620px;
     }
 
     .post-footer {
-      margin-top: 1.5rem;
+      margin-top: 1.25rem;
       display: flex;
       align-items: center;
       gap: 1.5rem;
@@ -80,23 +76,15 @@
       color: var(--muted);
     }
 
-    .post-link-col {
-      padding-top: 0.35rem;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-
     /* ── FEATURED POST ── */
     .post-featured {
       background: var(--cream-dark);
       border: 1px solid var(--border);
-      margin-bottom: 0;
-      padding: 2.75rem;
+      padding: 2.5rem;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3rem;
-      align-items: end;
+      align-items: center;
       position: relative;
       overflow: hidden;
     }
@@ -114,7 +102,7 @@
     }
 
     .post-featured .post-title {
-      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
     }
 
     .post-featured .post-excerpt {
@@ -132,7 +120,7 @@
       display: flex;
       align-items: center;
       gap: 1.5rem;
-      padding: 1.5rem 0;
+      padding: 1.25rem 0;
       border-top: 1px solid var(--border);
     }
 
@@ -143,35 +131,11 @@
       background: var(--border);
     }
 
-    /* ── NEWSLETTER BLOCK ── */
-    .newsletter-block {
-      margin: var(--py) 0;
-      padding: 3rem;
-      border: 1px solid var(--border);
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .newsletter-block h3 {
-      font-family: var(--serif);
-      font-size: 1.6rem;
-      font-weight: 400;
-      margin-bottom: 0.5rem;
-    }
-
-    .newsletter-block p {
-      font-size: 0.875rem;
-      color: var(--muted);
-    }
-
     @media (max-width: 860px) {
-      .post-entry { grid-template-columns: 1fr; gap: 0.5rem; }
-      .post-link-col { align-items: flex-start; border-top: 1px solid var(--border); padding-top: 1.5rem; margin-top: 1.5rem; }
+      .post-entry { grid-template-columns: 1fr; gap: 0.4rem; }
+      .post-date { padding-top: 0; }
       .post-featured { grid-template-columns: 1fr; }
       .post-featured-visual { display: none; }
-      .newsletter-block { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 600px) {
@@ -185,7 +149,7 @@
     <a href="index.html" class="nav-logo">Neela Madhu</a>
     <ul class="nav-links">
       <li><a href="case-studies.html">Work</a></li>
-      <li><a href="cv.html">CV</a></li>
+      <li><a href="cv.html">Resume</a></li>
       <li><a href="blog.html" class="active">Writing</a></li>
       <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
     </ul>
@@ -196,33 +160,32 @@
 
       <div class="page-header">
         <span class="label">Writing</span>
-        <h1>Ideas, Research<br>&amp; Observations</h1>
+        <h1>Field Notes: Research<br>&amp; Observations</h1>
         <p>
           Writing at the intersection of clean technology, built environment policy, and design thinking.
-          On the systems, tradeoffs, and decisions shaping how we build.
+          On the systems, tradeoffs, and decisions shaping how we innovate and build.
         </p>
       </div>
 
       <!-- ── FEATURED POST ── -->
       <div class="post-featured">
         <div>
-          <span class="post-category">Built Environment · Policy</span>
-          <h2 class="post-title">What Controlled Environment Agriculture Teaches Us About Low-Carbon Infrastructure</h2>
+          <span class="post-category">Energy · Agri-food</span>
+          <h2 class="post-title">Energy Volatility and the Case for Electric CEA Infrastructure</h2>
           <p class="post-excerpt">
-            CEA is often framed as an agricultural story — but the more time I spend inside the systems design
-            of a modular greenhouse facility, the more it reads as an infrastructure story. The decisions being
-            made now about energy, materials, and spatial configuration will define what's possible at scale.
-            Here's what designing from the inside of that problem has taught me.
+            Energy remains the hidden variable in almost every conversation about the future of food.
+            With global energy markets reeling from geopolitical tensions, natural gas prices have spiked —
+            and that instability creeps directly into farmers' input costs through fertilizer production.
+            The bigger question is structural: if food production is still heavily tied to natural gas,
+            how resilient is the system really?
           </p>
           <div class="post-footer">
-            <span class="post-read-time">7 min read</span>
-            <a href="#" class="arrow-link" style="pointer-events:none; opacity:0.5;">Coming soon <span class="arr">→</span></a>
+            <span class="post-read-time">3 min read · April 30, 2026</span>
+            <a href="article-1.html" class="arrow-link">Read more <span class="arr">→</span></a>
           </div>
         </div>
         <div class="post-featured-visual">
           <svg viewBox="0 0 280 260" xmlns="http://www.w3.org/2000/svg" width="260" height="240" aria-hidden="true">
-            <!-- Large greenhouse, editorial feel -->
-            <rect x="0" y="300" width="280" height="6" rx="3" fill="#C8C1B0"/>
             <rect x="30" y="154" width="210" height="84" fill="#EDE5D1"/>
             <rect x="42"  y="166" width="52" height="60" fill="#D0C8B5"/>
             <rect x="106" y="166" width="52" height="60" fill="#D0C8B5"/>
@@ -251,25 +214,20 @@
         <!-- Post 2 -->
         <div class="post-entry">
           <div>
-            <p class="post-date">April 2026</p>
+            <p class="post-date">Feb 26, 2026</p>
           </div>
           <div class="post-content">
-            <span class="post-category">Systems Thinking · Design</span>
-            <h3 class="post-title">Designing for Ambiguity: Systems Thinking in Climate Tech</h3>
+            <span class="post-category">Policy · Infrastructure</span>
+            <h3 class="post-title">Shifting the Cost Curve: The Structural Economics of Canadian Greenhouse Production</h3>
             <p class="post-excerpt">
-              Most design problems have a brief. Climate tech problems have constraints, stakeholders, incomplete
-              data, and a burning platform. Working inside a clean technology startup has shifted how I think about
-              the role of the designer — from problem-solver to problem-framer. A dispatch from inside the ambiguity.
+              Canadian greenhouse production is at a structural inflection point. Federal policy signals are
+              reinforcing domestic food security as a strategic priority — but capital incentives alone don't
+              change structural economics. The transformation needed is a shift of the cost curve itself,
+              not just optimization along it.
             </p>
             <div class="post-footer">
               <span class="post-read-time">5 min read</span>
-              <a href="#" class="arrow-link" style="pointer-events:none; opacity:0.5;">Coming soon <span class="arr">→</span></a>
-            </div>
-          </div>
-          <div class="post-link-col">
-            <div class="tags" style="margin-top:0; justify-content:flex-end;">
-              <span class="tag">Systems</span>
-              <span class="tag">Climate Tech</span>
+              <a href="article-2.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
           </div>
         </div>
@@ -277,27 +235,20 @@
         <!-- Post 3 -->
         <div class="post-entry">
           <div>
-            <p class="post-date">February 2026</p>
+            <p class="post-date">Feb 15, 2026</p>
           </div>
           <div class="post-content">
-            <span class="post-category">Policy · Built Environment</span>
-            <h3 class="post-title">The Built Environment's Role in Canada's Net-Zero Transition</h3>
+            <span class="post-category">Policy · Budget</span>
+            <h3 class="post-title">Budget 2025: Signals for Canadian Agriculture and Agri-Food</h3>
             <p class="post-excerpt">
-              Buildings account for roughly 13% of Canada's greenhouse gas emissions — but that figure
-              understates the problem. When you factor in embodied carbon, land use, and the energy systems
-              buildings depend on, the built environment's footprint is much harder to decarbonize than the
-              headline number suggests. What does a serious transition actually look like?
+              The release of Budget 2025 surfaces important signals for the future of Canadian agriculture.
+              The Budget identifies agriculture as a strategic sector — but also includes a reduction of up
+              to 15% in spending by Agriculture and Agri-Food Canada, raising questions about the long-term
+              trade-off between short-term resilience and innovation capacity.
             </p>
             <div class="post-footer">
-              <span class="post-read-time">8 min read</span>
-              <a href="#" class="arrow-link" style="pointer-events:none; opacity:0.5;">Coming soon <span class="arr">→</span></a>
-            </div>
-          </div>
-          <div class="post-link-col">
-            <div class="tags" style="margin-top:0; justify-content:flex-end;">
-              <span class="tag">Policy</span>
-              <span class="tag">Canada</span>
-              <span class="tag">Net-Zero</span>
+              <span class="post-read-time">3 min read</span>
+              <a href="article-3.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
           </div>
         </div>
@@ -305,39 +256,24 @@
         <!-- Post 4 -->
         <div class="post-entry">
           <div>
-            <p class="post-date">November 2025</p>
+            <p class="post-date">Jan 16, 2026</p>
           </div>
           <div class="post-content">
-            <span class="post-category">Research · Agri-food</span>
-            <h3 class="post-title">Agri-food Systems and the Urban Planning Gap</h3>
+            <span class="post-category">AgTech · Innovation</span>
+            <h3 class="post-title">Canada's AgTech Talent Gap: A Strategic Risk We Can't Ignore</h3>
             <p class="post-excerpt">
-              Controlled environment agriculture is increasingly viable — but the planning and policy
-              frameworks governing where and how these facilities can be built were largely written
-              before CEA existed as a category. The gap between infrastructure potential and regulatory
-              reality is a design problem as much as a policy one.
+              Less than 1% of STEM graduates are choosing careers in agriculture-related occupations.
+              Public investment in Canadian agriculture has declined 15%, and R&D spending is down 77%.
+              Meanwhile, the U.S. agri-food industry receives up to 22x the investment we see in Canada.
+              We are at a critical juncture and cannot allow innovation and talent to drain south.
             </p>
             <div class="post-footer">
-              <span class="post-read-time">6 min read</span>
-              <a href="#" class="arrow-link" style="pointer-events:none; opacity:0.5;">Coming soon <span class="arr">→</span></a>
-            </div>
-          </div>
-          <div class="post-link-col">
-            <div class="tags" style="margin-top:0; justify-content:flex-end;">
-              <span class="tag">Agri-food</span>
-              <span class="tag">Urban Planning</span>
+              <span class="post-read-time">4 min read</span>
+              <a href="article-4.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
           </div>
         </div>
 
-      </div>
-
-      <!-- ── NEWSLETTER ── -->
-      <div class="newsletter-block">
-        <div>
-          <h3>Want to follow along?</h3>
-          <p>Posts on clean technology, the built environment, and design thinking — occasional, substantive, no noise.</p>
-        </div>
-        <a href="mailto:neelambari.am@gmail.com?subject=Newsletter" class="btn btn-dark">Get in touch <span>→</span></a>
       </div>
 
     </div>
@@ -354,7 +290,7 @@
       <div class="footer-col">
         <span class="label-muted">Navigate</span>
         <a href="case-studies.html">Work</a>
-        <a href="cv.html">CV</a>
+        <a href="cv.html">Resume</a>
         <a href="blog.html">Writing</a>
       </div>
       <div class="footer-col">
