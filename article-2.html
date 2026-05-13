@@ -75,6 +75,26 @@
       text-transform: uppercase;
     }
 
+    .article-figure {
+      margin: 2.5rem 0;
+      padding: 0;
+    }
+
+    .article-figure img {
+      width: 100%;
+      max-width: 660px;
+      display: block;
+      border: 1px solid var(--border);
+    }
+
+    .article-figure figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 660px;
+    }
+
     .article-nav {
       margin-top: 3rem;
       padding: 2rem 0;
@@ -132,6 +152,12 @@
           only large-scale operators capture meaningful efficiency. Smaller operators face high breakeven
           thresholds, reinforcing consolidation.
         </p>
+
+        <figure class="article-figure">
+          <img src="cost-curve.png" alt="Chart comparing average cost curves for conventional 4-season greenhouse systems versus advanced integrated greenhouse systems across annual output capacity"/>
+          <figcaption>Average cost (CAD/kg) vs. annual output capacity (tonnes of lettuce/year). Advanced integrated greenhouse infrastructure shifts the entire cost curve downward — becoming viable at scales accessible to small farms.</figcaption>
+        </figure>
+
         <p>
           Many AgTech innovations optimize along this curve. They improve inputs, increase yield, and enhance
           efficiency — but they do not shift the curve itself. In stable conditions, that may be sufficient.

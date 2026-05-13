@@ -75,6 +75,16 @@
       text-transform: uppercase;
     }
 
+    .article-reference a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.18s;
+    }
+
+    .article-reference a:hover { text-decoration-color: var(--green); }
+
     .article-nav {
       margin-top: 3rem;
       padding: 2rem 0;
@@ -140,7 +150,7 @@
 
         <div class="article-reference">
           <strong>Reference</strong>
-          Navigating Budget 2025: Signals for Canadian Agriculture and Agri-Food — Canadian Agri-Food Policy Institute
+          <a href="https://capi-icpa.ca/events/capi-webinars/navigating-budget-2025-signals-for-canadian-agriculture-and-agri-food/" target="_blank" rel="noopener">Navigating Budget 2025: Signals for Canadian Agriculture and Agri-Food — Canadian Agri-Food Policy Institute ↗</a>
         </div>
 
         <div class="article-nav">

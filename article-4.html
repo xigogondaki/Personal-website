@@ -75,6 +75,16 @@
       text-transform: uppercase;
     }
 
+    .article-reference a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.18s;
+    }
+
+    .article-reference a:hover { text-decoration-color: var(--green); }
+
     .article-nav {
       margin-top: 3rem;
       padding: 2rem 0;
@@ -146,7 +156,7 @@
 
         <div class="article-reference">
           <strong>Reference</strong>
-          The Next Generation of Growth: Cultivating a new crop of agriculture talent and innovators — RBC
+          <a href="https://www.rbc.com/en/thought-leadership/climate-action-institute/agriculture-reports/the-next-generation-of-growth-cultivating-a-new-crop-of-agriculture-talent-and-innovators-2/" target="_blank" rel="noopener">The Next Generation of Growth: Cultivating a new crop of agriculture talent and innovators — RBC ↗</a>
         </div>
 
         <div class="article-nav">

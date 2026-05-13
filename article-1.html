@@ -79,6 +79,16 @@
       text-transform: uppercase;
     }
 
+    .article-reference a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.18s;
+    }
+
+    .article-reference a:hover { text-decoration-color: var(--green); }
+
     .article-nav {
       margin-top: 3rem;
       padding: 2rem 0;
@@ -138,7 +148,7 @@
 
         <div class="article-reference">
           <strong>Reference</strong>
-          How Canada can protect its food system in an increasingly uncertain world — The Globe and Mail
+          <a href="https://www.theglobeandmail.com/opinion/article-food-system-protection-fertilizer-iran-war/" target="_blank" rel="noopener">How Canada can protect its food system in an increasingly uncertain world — The Globe and Mail ↗</a>
         </div>
 
         <div class="article-nav">
