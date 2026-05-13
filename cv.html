@@ -103,6 +103,7 @@
       align-items: baseline;
     }
 
+    .skills-grid .skill-row:first-child { border-top: none; }
     .skill-row:nth-child(even) { padding-left: 2rem; }
 
     .skill-cat {
@@ -119,17 +120,25 @@
       line-height: 1.65;
     }
 
-    /* Education */
+    /* Education — horizontal two-column */
+    .edu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 4rem;
+    }
+
     .edu-entry {
       display: grid;
       grid-template-columns: 1fr auto;
-      gap: 0.4rem 2.5rem;
-      padding: 1.5rem 0;
-      border-top: 1px solid var(--border);
+      gap: 0.4rem 1.5rem;
+      padding: 1.5rem 0 0;
       align-items: start;
     }
 
-    .edu-entry:first-of-type { border-top: none; padding-top: 0; }
+    .edu-grid .edu-entry:first-child {
+      border-right: 1px solid var(--border);
+      padding-right: 4rem;
+    }
 
     .edu-school {
       font-size: 0.95rem;
@@ -191,9 +200,12 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 0 5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2.25rem;
+      margin-top: 2.25rem;
     }
 
-    .two-col-grid .cv-section { border-top: none; }
+    .two-col-grid .cv-section { border-top: none; padding-top: 0; }
     .two-col-grid .cv-section:first-child {
       border-right: 1px solid var(--border);
       padding-right: 5rem;
@@ -202,7 +214,6 @@
     /* Summary block */
     .summary-block {
       padding: 2.25rem 0;
-      border-top: 1px solid var(--border);
     }
 
     .summary-text {
@@ -220,6 +231,8 @@
       .skills-grid { grid-template-columns: 1fr; }
       .skill-row { grid-template-columns: 1fr; gap: 0.3rem; }
       .skill-row:nth-child(even) { padding-left: 0; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .edu-grid .edu-entry:first-child { border-right: none; padding-right: 0; }
       .two-col-grid { grid-template-columns: 1fr; }
       .two-col-grid .cv-section:first-child { border-right: none; padding-right: 0; }
     }
@@ -248,13 +261,7 @@
       <div class="page-header">
         <span class="label">Resume</span>
         <h1>Neela Madhu</h1>
-        <p>
-          Design Project Manager &amp; Strategic Systems Thinker &nbsp;·&nbsp;
-          <a href="mailto:neelambari.am@gmail.com" style="color:var(--green-mid);">neelambari.am@gmail.com</a>
-          &nbsp;·&nbsp; 647-766-3909
-          &nbsp;·&nbsp;
-          <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener" style="color:var(--green-mid);">LinkedIn ↗</a>
-        </p>
+        <p>Design project manager</p>
       </div>
 
       <div class="summary-block">
@@ -277,13 +284,13 @@
           </div>
           <p class="exp-date">Sept 2025 – Present</p>
           <ul class="exp-bullets">
-            <li>Own <em>building and systems design definition</em> for a first-of-kind modular CEA facility engineered for <em>90% lower energy OpEx</em> and <em>25% higher crop yield</em> than conventional greenhouse infrastructure, supporting development of a proprietary platform targeting the <em>$1.75B Canadian CEA market</em>.</li>
-            <li>Direct a <em>multi-institution R&D program</em> across 7+ external teams — setting technical direction, evaluating research outputs, and determining what advances into Pilot and commercial MVP.</li>
-            <li>Lead <em>PoC validation strategy</em> by synthesizing insights across parallel R&D workstreams to define key technical and operational questions required for <em>commercialization readiness</em>.</li>
-            <li>Conduct <em>techno-economic infrastructure modeling</em> for commercial MVP development, evaluating spatial, growing, and pricing constraints across facility configurations.</li>
-            <li>Developed a <em>waterfall decision framework</em> mapping system interdependencies, capital constraints, and design tradeoffs — supporting <em>leadership decision-making, investor engagement, and market validation</em>.</li>
-            <li>Authored <em>policy-informed research and thought leadership</em> translating intersections of agri-food systems, clean energy, and the environment for sector audiences and funders.</li>
-            <li>Manage <em>cross-sector stakeholder relationships</em> across investors, farm operators, academic researchers, and government partners; oversee research contracts with <em>Mitacs, NSERC, and OAFRI</em>.</li>
+            <li>Own <strong>building and systems design definition</strong> for a first-of-kind modular CEA facility engineered for <strong>90% lower energy OpEx</strong> and <strong>25% higher crop yield</strong> than conventional greenhouse infrastructure, supporting development of a proprietary platform targeting the <strong>$1.75B Canadian CEA market</strong>.</li>
+            <li>Direct a <strong>multi-institution R&D program</strong> across 7+ external teams — setting technical direction, evaluating research outputs, and determining what advances into Pilot and commercial MVP.</li>
+            <li>Lead <strong>PoC validation strategy</strong> by synthesizing insights across parallel R&D workstreams to define key technical and operational questions required for <strong>commercialization readiness</strong>.</li>
+            <li>Conduct <strong>techno-economic infrastructure modeling</strong> for commercial MVP development, evaluating spatial, growing, and pricing constraints across facility configurations.</li>
+            <li>Developed a <strong>waterfall decision framework</strong> mapping system interdependencies, capital constraints, and design tradeoffs — supporting <strong>leadership decision-making, investor engagement, and market validation</strong>.</li>
+            <li>Authored <strong>policy-informed research and thought leadership</strong> translating intersections of agri-food systems, clean energy, and the environment for sector audiences and funders.</li>
+            <li>Manage <strong>cross-sector stakeholder relationships</strong> across investors, farm operators, academic researchers, and government partners; oversee research contracts with <strong>Mitacs, NSERC, and OAFRI</strong>.</li>
           </ul>
         </div>
 
@@ -294,10 +301,10 @@
           </div>
           <p class="exp-date">July 2024 – Sept 2025</p>
           <ul class="exp-bullets">
-            <li>Built and maintained the <em>architectural design foundation</em> for the company's entire R&D program — developing <em>3D models and drawing packages in SketchUp</em> as the primary technical input for CFD modeling, energy simulation, structural review, and growing layout/sunlighting studies.</li>
-            <li>Established the company's <em>project management infrastructure from the ground up</em> — building workflows, authoring PMPs for all external research programs, and creating cross-project tracking systems.</li>
-            <li>Executed <em>comparative benchmarking</em> of facility configurations across energy performance, constructability, and capital cost — contributing to <em>techno-economic analysis</em> informing early Pilot and MVP design decisions.</li>
-            <li>Led <em>supplier and vendor procurement</em> across major building systems — evaluating proposals, consolidating pricing into BOM/FF&E documentation, and coordinating pre-construction groundwork including <em>zoning review, site planning, and contractor RFPs</em>.</li>
+            <li>Built and maintained the <strong>architectural design foundation</strong> for the company's entire R&D program — developing <strong>3D models and drawing packages in SketchUp</strong> as the primary technical input for CFD modeling, energy simulation, structural review, and growing layout/sunlighting studies.</li>
+            <li>Established the company's <strong>project management infrastructure from the ground up</strong> — building workflows, authoring PMPs for all external research programs, and creating cross-project tracking systems.</li>
+            <li>Executed <strong>comparative benchmarking</strong> of facility configurations across energy performance, constructability, and capital cost — contributing to <strong>techno-economic analysis</strong> informing early Pilot and MVP design decisions.</li>
+            <li>Led <strong>supplier and vendor procurement</strong> across major building systems — evaluating proposals, consolidating pricing into BOM/FF&E documentation, and coordinating pre-construction groundwork including <strong>zoning review, site planning, and contractor RFPs</strong>.</li>
           </ul>
         </div>
 
@@ -308,8 +315,8 @@
           </div>
           <p class="exp-date">Sept 2023 – July 2024</p>
           <ul class="exp-bullets">
-            <li>Owned <em>full project lifecycle</em> across multi-family residential projects — managing timelines, client relationships, contractor communications, and deliverables from <em>concept through construction documentation</em>.</li>
-            <li>Led <em>design development</em> including material and finish selection, procurement, <em>budget tracking</em>, and client-facing presentations and proposals.</li>
+            <li>Owned <strong>full project lifecycle</strong> across multi-family residential projects — managing timelines, client relationships, contractor communications, and deliverables from <strong>concept through construction documentation</strong>.</li>
+            <li>Led <strong>design development</strong> including material and finish selection, procurement, <strong>budget tracking</strong>, and client-facing presentations and proposals.</li>
           </ul>
         </div>
 
@@ -320,8 +327,8 @@
           </div>
           <p class="exp-date">Dec 2020 – Jan 2022</p>
           <ul class="exp-bullets">
-            <li>Researched and authored content across multiple industries — developing fluency in <em>rapidly synthesizing unfamiliar topics</em> and translating complex information for specific audiences.</li>
-            <li>Managed <em>full content lifecycles</em> from research and strategic framing through publication, applying <em>SEO strategy and audience segmentation</em> across diverse client briefs.</li>
+            <li>Researched and authored content across multiple industries — developing fluency in <strong>rapidly synthesizing unfamiliar topics</strong> and translating complex information for specific audiences.</li>
+            <li>Managed <strong>full content lifecycles</strong> from research and strategic framing through publication, applying <strong>SEO strategy and audience segmentation</strong> across diverse client briefs.</li>
           </ul>
         </div>
       </section>
@@ -356,19 +363,21 @@
       <!-- Education -->
       <section class="cv-section">
         <span class="cv-section-label">Education</span>
-        <div class="edu-entry">
-          <div>
-            <p class="edu-school">Ontario College of Art &amp; Design University</p>
-            <p class="edu-degree">Bachelor of Design in Environmental Design &amp; Interior Design (Distinction)</p>
+        <div class="edu-grid">
+          <div class="edu-entry">
+            <div>
+              <p class="edu-school">Ontario College of Art &amp; Design University</p>
+              <p class="edu-degree">Bachelor of Design in Environmental Design &amp; Interior Design (Distinction)</p>
+            </div>
+            <p class="edu-year">2022</p>
           </div>
-          <p class="edu-year">2022</p>
-        </div>
-        <div class="edu-entry">
-          <div>
-            <p class="edu-school">Delhi University, St. Stephen's College</p>
-            <p class="edu-degree">Bachelor of Arts in Philosophy (Honors)</p>
+          <div class="edu-entry">
+            <div>
+              <p class="edu-school">Delhi University, St. Stephen's College</p>
+              <p class="edu-degree">Bachelor of Arts in Philosophy (Honors)</p>
+            </div>
+            <p class="edu-year">2018</p>
           </div>
-          <p class="edu-year">2018</p>
         </div>
       </section>
 
@@ -425,8 +434,6 @@
     <div class="footer-inner">
       <div class="footer-contact">
         <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
-        <span class="f-sep">·</span>
-        <span>647-766-3909</span>
         <span class="f-sep">·</span>
         <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>

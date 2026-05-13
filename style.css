@@ -3,8 +3,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --cream:      #F5F1E3;
-  --cream-dark: #EBE6D4;
+  --cream:      #fcf6e9;
+  --cream-dark: #f2ead8;
   --green:      #1C5240;
   --green-mid:  #366B54;
   --green-lt:   #5E8A72;
@@ -216,7 +216,7 @@ main { padding-top: var(--nav-h); }
 
 .page-header h1 {
   font-family: var(--sans);
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(1.9rem, 4vw, 3.1rem);
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
