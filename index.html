@@ -6,582 +6,312 @@
   <title>Neela Madhu — Design, Systems & Strategy</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ── HERO ── */
-    .hero {
-      min-height: calc(100vh - var(--nav-h));
-      display: grid;
-      grid-template-rows: 1fr auto;
+    /* ── NO SCROLL — full viewport fit ── */
+    html, body { height: 100%; overflow: hidden; }
+
+    body {
+      display: flex;
+      flex-direction: column;
     }
 
-    .hero-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: clamp(3rem, 7vw, 6rem) var(--px) clamp(2rem, 4vw, 3rem);
+    nav { flex-shrink: 0; position: relative; }
+
+    main {
+      flex: 1;
+      padding-top: 0;
+      overflow: hidden;
+      display: flex;
+    }
+
+    footer { flex-shrink: 0; }
+
+    /* ── HERO GRID ── */
+    .hero {
       width: 100%;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: center;
     }
 
-    .hero-eyebrow {
+    /* ── LEFT: TEXT ── */
+    .hero-text {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.5rem;
-    }
-    .hero-eyebrow::before {
-      content: '';
-      display: block;
-      width: 28px;
-      height: 1px;
-      background: var(--olive);
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(2rem, 5vh, 4.5rem) var(--px);
+      border-right: 1px solid var(--border);
     }
 
-    .hero-title {
-      font-family: var(--serif);
-      font-size: clamp(3.5rem, 7vw, 6.5rem);
+    .hero-h1 {
+      font-family: var(--sans);
+      font-size: clamp(2.2rem, 4.4vw, 4.4rem);
       font-weight: 400;
-      line-height: 1.02;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
+      line-height: 1.06;
+      letter-spacing: -0.025em;
+      margin-bottom: clamp(1rem, 2.5vh, 1.75rem);
     }
 
-    .hero-title em {
-      font-style: italic;
-      color: var(--olive);
-    }
+    .hero-h1 .bold  { font-weight: 700; }
+    .hero-h1 .light { font-weight: 300; }
 
-    .hero-tagline {
-      font-size: 1rem;
+    .hero-sub {
+      font-size: clamp(0.8rem, 1.2vw, 0.925rem);
       color: var(--muted);
-      max-width: 400px;
-      line-height: 1.7;
-      margin-bottom: 2.5rem;
+      max-width: 380px;
+      line-height: 1.72;
+      margin-bottom: clamp(1.25rem, 3vh, 2rem);
     }
 
     .hero-cta {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
+      gap: 0.85rem;
     }
 
-    /* ── HERO GRAPHIC ── */
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 1.5rem;
-      position: relative;
-    }
-
-    .greenhouse-wrap {
-      width: 100%;
-      max-width: 440px;
-    }
-
-    .hero-caption {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      align-self: flex-start;
-    }
-
-    .circular-badge {
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    /* ── TAGS STRIP ── */
-    .hero-strip {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 0.85rem var(--px);
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .strip-item {
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
+    .hero-location {
+      margin-top: clamp(1.5rem, 4vh, 3rem);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
+      color: var(--border);
     }
 
-    .strip-dot {
-      width: 3px;
-      height: 3px;
-      border-radius: 50%;
-      background: var(--border);
-      flex-shrink: 0;
-    }
-
-    /* ── ABOUT BRIEF ── */
-    .about-section {
-      padding: var(--py) 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .about-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--px);
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      gap: clamp(3rem, 6vw, 6rem);
-      align-items: start;
-    }
-
-    .about-left .label { margin-bottom: 1.5rem; }
-
-    .about-stats {
-      margin-top: 2.5rem;
+    /* ── RIGHT: GRAPHIC ── */
+    .hero-graphic {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-    }
-
-    .stat-item {
-      border-top: 1px solid var(--border);
-      padding-top: 1rem;
-    }
-
-    .stat-num {
-      font-family: var(--serif);
-      font-size: 2.2rem;
-      font-weight: 400;
-      color: var(--olive);
-      line-height: 1;
-    }
-
-    .stat-desc {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-top: 0.25rem;
-    }
-
-    .about-pullquote {
-      font-family: var(--serif);
-      font-size: clamp(1.5rem, 3vw, 2.2rem);
-      font-weight: 400;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      margin-bottom: 2rem;
-      color: var(--dark);
-    }
-
-    .about-pullquote em { font-style: italic; color: var(--olive); }
-
-    .about-body {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 2rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .about-body p {
-      font-size: 0.9rem;
-      color: var(--muted);
-      line-height: 1.75;
-    }
-
-    /* ── SELECTED WORK ── */
-    .work-section {
-      padding: var(--py) 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .work-inner {
-      max-width: var(--max-w);
-      margin: 0 auto;
-      padding: 0 var(--px);
-    }
-
-    .work-head {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .work-head h2 {
-      font-family: var(--serif);
-      font-size: 2rem;
-      font-weight: 400;
-    }
-
-    .work-cards {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5px;
-      background: var(--border);
-      border: 1px solid var(--border);
-    }
-
-    .work-card {
-      background: var(--cream);
-      display: grid;
-      grid-template-rows: auto 1fr;
-      transition: background 0.2s;
-    }
-
-    .work-card:hover { background: var(--cream-dark); }
-
-    .work-card-visual {
-      height: 220px;
-      background: var(--olive);
-      background-image: radial-gradient(circle, rgba(245,240,230,0.12) 1.5px, transparent 1.5px);
-      background-size: 22px 22px;
-      overflow: hidden;
-      position: relative;
-      display: flex;
       align-items: center;
       justify-content: center;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream);
     }
 
-    .work-card-visual.sage-bg {
-      background-color: var(--sage);
-      background-image: radial-gradient(circle, rgba(245,240,230,0.12) 1.5px, transparent 1.5px);
-      background-size: 22px 22px;
+    .hero-graphic svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
     }
 
-    .work-card-body {
-      padding: 1.75rem 2rem 2rem;
-    }
-
-    .card-num {
-      font-size: 0.65rem;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 0.75rem;
-    }
-
-    .card-title {
-      font-family: var(--serif);
-      font-size: 1.5rem;
-      font-weight: 400;
-      line-height: 1.2;
-      margin-bottom: 0.5rem;
-    }
-
-    .card-company {
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 0.85rem;
-    }
-
-    .card-desc {
-      font-size: 0.875rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-
-    .card-footer {
-      margin-top: 1.5rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    .hero-coord {
+      position: absolute;
+      bottom: clamp(0.75rem, 2vh, 1.5rem);
+      left: clamp(1rem, 3vw, 2.5rem);
+      font-size: 0.62rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green);
+      opacity: 0.35;
     }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .hero-right { align-items: center; }
-      .about-inner { grid-template-columns: 1fr; }
-      .about-stats { flex-direction: row; }
-      .work-cards { grid-template-columns: 1fr; }
+    @media (max-width: 860px) {
+      html, body { overflow: auto; }
+      body { display: block; }
+      .hero { grid-template-columns: 1fr; height: auto; }
+      .hero-text { border-right: none; border-bottom: 1px solid var(--border); padding: 3rem var(--px); }
+      .hero-graphic { height: 50vw; min-height: 280px; }
     }
 
-    @media (max-width: 600px) {
-      .about-body { grid-template-columns: 1fr; }
-      .hero-title { font-size: 3rem; }
+    @media (max-width: 540px) {
+      .hero-h1 { font-size: 2.4rem; }
     }
   </style>
 </head>
 <body>
 
+  <!-- ══ NAV ══ -->
   <nav>
-    <a href="index.html" class="nav-logo">Neela Madhu</a>
+    <a href="index.html" class="nav-logo">Neela M.</a>
     <ul class="nav-links">
       <li><a href="case-studies.html">Work</a></li>
       <li><a href="cv.html">Resume</a></li>
       <li><a href="blog.html">Writing</a></li>
-      <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
+      <li><a href="mailto:neelambari.am@gmail.com">Contact</a></li>
     </ul>
   </nav>
 
+  <!-- ══ HERO ══ -->
   <main>
+    <div class="hero">
 
-    <!-- ══ HERO ══ -->
-    <section class="hero">
-      <div class="hero-inner">
+      <!-- LEFT -->
+      <div class="hero-text">
+        <h1 class="hero-h1">
+          Hi, I'm<br>
+          <span class="bold">Neela —</span><br>
+          <span class="light">strategic thinker</span><br>
+          <span class="bold">&amp; systems designer</span><br>
+          <span class="light">in clean-tech &amp;</span><br>
+          <span class="light">the built environment.</span>
+        </h1>
 
-        <!-- Left -->
-        <div class="hero-left">
-          <div class="hero-eyebrow">
-            <span class="label">Design · Systems · Strategy</span>
-          </div>
-          <h1 class="hero-title">
-            Hello,<br>
-            I'm <em>Neela</em> —
-          </h1>
-          <p class="hero-tagline">
-            Strategic designer working at the intersection of clean technology,
-            built environment, and infrastructure development.
-          </p>
-          <div class="hero-cta">
-            <a href="case-studies.html" class="btn btn-dark">View Work <span>→</span></a>
-            <a href="cv.html" class="btn btn-ghost">Resume</a>
-          </div>
+        <p class="hero-sub">
+          Currently a Design Project Manager at Can Grow Here, Inc. working at the
+          intersection of systems integration, infrastructure development and design,
+          and climate/clean-tech.
+        </p>
+
+        <div class="hero-cta">
+          <a href="case-studies.html" class="btn btn-solid">View Work →</a>
+          <a href="cv.html" class="btn btn-ghost">Resume</a>
         </div>
 
-        <!-- Right: greenhouse graphic -->
-        <div class="hero-right">
-          <div class="greenhouse-wrap float-gentle">
-            <svg viewBox="0 0 460 320" xmlns="http://www.w3.org/2000/svg" width="100%" height="auto" aria-hidden="true">
-              <!-- Ground -->
-              <rect x="0" y="298" width="380" height="7" rx="3.5" fill="#A08D18"/>
-
-              <!-- Tree -->
-              <rect x="390" y="252" width="11" height="46" fill="#5D6B50"/>
-              <circle cx="395" cy="195" r="44" fill="#5D6B50"/>
-              <circle cx="370" cy="220" r="28" fill="#5D6B50"/>
-              <circle cx="420" cy="216" r="23" fill="#5D6B50"/>
-
-              <!-- Greenhouse body -->
-              <rect x="36" y="190" width="290" height="108" fill="#A08D18"/>
-
-              <!-- Glass panels (cream) -->
-              <rect x="52"  y="206" width="70" height="78" fill="#F5F0E6"/>
-              <rect x="138" y="206" width="70" height="78" fill="#F5F0E6"/>
-              <rect x="224" y="206" width="70" height="78" fill="#F5F0E6"/>
-
-              <!-- Horizontal mullion -->
-              <rect x="36" y="247" width="290" height="5" fill="#A08D18"/>
-
-              <!-- Plants: sage ellipses in lower panel sections -->
-              <ellipse cx="69"  cy="268" rx="11" ry="14" fill="#5D6B50"/>
-              <ellipse cx="90"  cy="268" rx="9"  ry="14" fill="#5D6B50"/>
-              <ellipse cx="155" cy="268" rx="11" ry="14" fill="#5D6B50"/>
-              <ellipse cx="176" cy="268" rx="9"  ry="14" fill="#5D6B50"/>
-              <ellipse cx="241" cy="268" rx="11" ry="14" fill="#5D6B50"/>
-              <ellipse cx="262" cy="268" rx="9"  ry="14" fill="#5D6B50"/>
-
-              <!-- Peaked roof -->
-              <polygon points="18,190 181,62 344,190" fill="#A08D18"/>
-
-              <!-- Sun element -->
-              <circle class="float-gentle" cx="54" cy="82" r="26" fill="none" stroke="#A08D18" stroke-width="3.5"/>
-              <circle cx="54" cy="82" r="5.5" fill="#A08D18"/>
-            </svg>
-          </div>
-
-          <!-- Rotating text badge -->
-          <div class="hero-caption">
-            <div class="circular-badge">
-              <svg class="spin-slow" viewBox="0 0 180 180" width="130" height="130" aria-hidden="true">
-                <defs>
-                  <path id="circ" d="M 90,90 m -68,0 a 68,68 0 1,1 136,0 a 68,68 0 1,1 -136,0"/>
-                </defs>
-                <text font-size="9.5" fill="#A08D18" letter-spacing="3.8" font-family="DM Sans, sans-serif" font-weight="400">
-                  <textPath href="#circ">Built Environment · Clean Tech · CEA ·</textPath>
-                </text>
-              </svg>
-            </div>
-            <p style="font-size:0.75rem; color:var(--muted); max-width:120px; line-height:1.5;">
-              Illustration: Iconography of the built environment &amp; clean systems
-            </p>
-          </div>
-        </div>
-
+        <p class="hero-location">Toronto, Canada</p>
       </div>
 
-      <!-- Strip -->
-      <div class="hero-strip">
-        <span class="strip-item">Built Environment</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">Clean Technology</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">Controlled Environment Agriculture</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">Infrastructure Development</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">LEED Green Associate</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">Systems Thinking</span>
-        <span class="strip-dot"></span>
-        <span class="strip-item">Sustainability</span>
+      <!-- RIGHT: TOPOGRAPHIC GRAPHIC -->
+      <div class="hero-graphic">
+
+        <!-- Topographic contour — abstract built-environment system graphic -->
+        <svg viewBox="0 0 540 620" xmlns="http://www.w3.org/2000/svg"
+             preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+
+          <!-- Background: faint horizontal grid lines (infrastructure/section drawing ref) -->
+          <line x1="0" y1="155" x2="540" y2="155" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+          <line x1="0" y1="310" x2="540" y2="310" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+          <line x1="0" y1="465" x2="540" y2="465" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+          <line x1="135" y1="0" x2="135" y2="620" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+          <line x1="270" y1="0" x2="270" y2="620" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+          <line x1="405" y1="0" x2="405" y2="620" stroke="#1C5240" stroke-width="0.4" opacity="0.08"/>
+
+          <!-- Topographic contour rings — centred at (270, 305), organic offsets -->
+          <!-- Ring 12 — outermost, gossamer -->
+          <ellipse cx="270" cy="305" rx="245" ry="268"
+            fill="none" stroke="#1C5240" stroke-width="0.45" opacity="0.22"/>
+
+          <!-- Ring 11 -->
+          <ellipse cx="268" cy="303" rx="218" ry="238"
+            fill="none" stroke="#1C5240" stroke-width="0.5" opacity="0.27"/>
+
+          <!-- Ring 10 — dash break on upper-right arc -->
+          <ellipse cx="272" cy="307" rx="192" ry="210"
+            fill="none" stroke="#1C5240" stroke-width="0.55" opacity="0.30"
+            stroke-dasharray="840 120" stroke-dashoffset="-60"/>
+
+          <!-- Ring 9 -->
+          <ellipse cx="267" cy="303" rx="167" ry="183"
+            fill="none" stroke="#1C5240" stroke-width="0.65" opacity="0.35"/>
+
+          <!-- Ring 8 — dash break -->
+          <ellipse cx="273" cy="308" rx="143" ry="157"
+            fill="none" stroke="#1C5240" stroke-width="0.75" opacity="0.40"
+            stroke-dasharray="640 90" stroke-dashoffset="-40"/>
+
+          <!-- Ring 7 -->
+          <ellipse cx="269" cy="304" rx="120" ry="132"
+            fill="#1C5240" fill-opacity="0.025"
+            stroke="#1C5240" stroke-width="0.85" opacity="0.48"/>
+
+          <!-- Ring 6 -->
+          <ellipse cx="271" cy="307" rx="97" ry="107"
+            fill="#1C5240" fill-opacity="0.04"
+            stroke="#1C5240" stroke-width="1.0" opacity="0.56"/>
+
+          <!-- Ring 5 -->
+          <ellipse cx="268" cy="303" rx="76" ry="84"
+            fill="#1C5240" fill-opacity="0.065"
+            stroke="#1C5240" stroke-width="1.25" opacity="0.64"/>
+
+          <!-- Ring 4 -->
+          <ellipse cx="271" cy="306" rx="57" ry="62"
+            fill="#1C5240" fill-opacity="0.095"
+            stroke="#1C5240" stroke-width="1.55" opacity="0.72"/>
+
+          <!-- Ring 3 -->
+          <ellipse cx="269" cy="304" rx="40" ry="43"
+            fill="#1C5240" fill-opacity="0.135"
+            stroke="#1C5240" stroke-width="1.9" opacity="0.80"/>
+
+          <!-- Ring 2 -->
+          <ellipse cx="270" cy="305" rx="25" ry="26"
+            fill="#1C5240" fill-opacity="0.20"
+            stroke="#1C5240" stroke-width="2.3" opacity="0.88"/>
+
+          <!-- Ring 1 — inner -->
+          <ellipse cx="270" cy="305" rx="13" ry="13"
+            fill="#1C5240" fill-opacity="0.38"
+            stroke="#1C5240" stroke-width="2.8" opacity="0.92"/>
+
+          <!-- Centre point -->
+          <circle cx="270" cy="305" r="4.5" fill="#1C5240" opacity="0.85"/>
+          <circle cx="270" cy="305" r="1.8" fill="#F5F1E3"/>
+
+          <!-- Cross-hairs — survey marker at centre -->
+          <line x1="270" y1="282" x2="270" y2="328"
+            stroke="#1C5240" stroke-width="0.6" opacity="0.25"/>
+          <line x1="247" y1="305" x2="293" y2="305"
+            stroke="#1C5240" stroke-width="0.6" opacity="0.25"/>
+
+          <!-- Tick marks on outermost ring — cardinal points -->
+          <!-- North tick -->
+          <line x1="270" y1="37"  x2="270" y2="22"
+            stroke="#1C5240" stroke-width="0.8" opacity="0.30"/>
+          <!-- South tick -->
+          <line x1="270" y1="573" x2="270" y2="588"
+            stroke="#1C5240" stroke-width="0.8" opacity="0.30"/>
+          <!-- East tick -->
+          <line x1="515" y1="305" x2="530" y2="305"
+            stroke="#1C5240" stroke-width="0.8" opacity="0.30"/>
+          <!-- West tick -->
+          <line x1="25"  y1="305" x2="10"  y2="305"
+            stroke="#1C5240" stroke-width="0.8" opacity="0.30"/>
+
+          <!-- Diagonal reference line — axis cut -->
+          <line x1="60" y1="80" x2="480" y2="540"
+            stroke="#1C5240" stroke-width="0.35" opacity="0.10"/>
+
+          <!-- Rotating circular text badge -->
+          <g transform="translate(438, 112)">
+            <circle cx="0" cy="0" r="52"
+              fill="none" stroke="#1C5240" stroke-width="0.6" opacity="0.22"/>
+            <g class="spin-slow">
+              <defs>
+                <path id="badge-ring"
+                  d="M 0,0 m -44,0 a 44,44 0 1,1 88,0 a 44,44 0 1,1 -88,0"/>
+              </defs>
+              <text font-size="7.2" fill="#1C5240" opacity="0.55"
+                letter-spacing="6.5" font-family="DM Sans, sans-serif" font-weight="500">
+                <textPath href="#badge-ring">design · systems · strategy ·</textPath>
+              </text>
+            </g>
+            <circle cx="0" cy="0" r="4" fill="#1C5240" opacity="0.55"/>
+          </g>
+
+          <!-- Small dot cluster: top-left quadrant — sparse, abstract -->
+          <circle cx="108" cy="148" r="1.8" fill="#1C5240" opacity="0.30"/>
+          <circle cx="120" cy="162" r="1.2" fill="#1C5240" opacity="0.22"/>
+          <circle cx="96"  cy="165" r="1.0" fill="#1C5240" opacity="0.18"/>
+
+        </svg>
+
+        <!-- Coordinate label -->
+        <span class="hero-coord">43°41′N · 79°23′W</span>
+
       </div>
-    </section>
-
-    <!-- ══ ABOUT BRIEF ══ -->
-    <section class="about-section">
-      <div class="about-inner">
-        <div class="about-left">
-          <span class="label">About</span>
-          <div class="about-stats">
-            <div class="stat-item">
-              <div class="stat-num">7+</div>
-              <div class="stat-desc">R&D teams directed</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">$1.75B</div>
-              <div class="stat-desc">Canadian CEA market targeted</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num">LEED GA</div>
-              <div class="stat-desc">Green building certified</div>
-            </div>
-          </div>
-        </div>
-        <div class="about-right">
-          <p class="about-pullquote">
-            "Strategic systems thinker — synthesizing <em>complex, cross-disciplinary inputs</em> into frameworks that drive decisions."
-          </p>
-          <p style="font-size:0.95rem; color:var(--muted); line-height:1.75;">
-            Currently Design Project Manager at Can Grow Here, Inc., leading building and systems design for a
-            first-of-kind modular controlled environment agriculture facility. Background spanning architecture,
-            environmental design, and content strategy, grounded by a BA in Philosophy that underpins a systems-first
-            approach to ambiguous problems.
-          </p>
-          <div class="about-body">
-            <p>Based in Toronto. LEED Green Associate certified. Trained at OCAD University in Environmental &amp; Interior Design (Distinction) and Delhi University (Philosophy, Honors).</p>
-            <p>Equally fluent in analytical problem-solving and stakeholder communication — from investor pitch materials to CFD-linked 3D models to policy-informed thought leadership.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ══ SELECTED WORK ══ -->
-    <section class="work-section">
-      <div class="work-inner">
-        <div class="work-head">
-          <h2>Selected Work</h2>
-          <a href="case-studies.html" class="arrow-link">All case studies <span class="arr">→</span></a>
-        </div>
-
-        <div class="work-cards">
-          <!-- Card 1 -->
-          <div class="work-card">
-            <div class="work-card-visual">
-              <svg viewBox="0 0 320 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <rect x="80" y="110" width="160" height="65" fill="rgba(245,240,230,0.18)"/>
-                <rect x="90"  y="120" width="34" height="46" fill="rgba(245,240,230,0.25)"/>
-                <rect x="133" y="120" width="34" height="46" fill="rgba(245,240,230,0.25)"/>
-                <rect x="176" y="120" width="34" height="46" fill="rgba(245,240,230,0.25)"/>
-                <polygon points="70,110 160,42 250,110" fill="rgba(245,240,230,0.18)"/>
-                <circle cx="50" cy="55" r="20" fill="none" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-                <circle cx="50" cy="55" r="4" fill="rgba(245,240,230,0.3)"/>
-                <ellipse cx="270" cy="130" rx="22" ry="30" fill="rgba(93,107,80,0.5)"/>
-                <ellipse cx="255" cy="140" rx="14" ry="22" fill="rgba(93,107,80,0.5)"/>
-                <rect x="266" y="158" width="8" height="17" fill="rgba(93,107,80,0.5)"/>
-              </svg>
-            </div>
-            <div class="work-card-body">
-              <p class="card-num">01 — Can Grow Here, Inc.</p>
-              <h3 class="card-title">Modular CEA Facility Design System</h3>
-              <p class="card-company">Design Project Manager · 2024–Present</p>
-              <p class="card-desc">
-                Building and systems design definition for a first-of-kind modular controlled environment
-                agriculture facility — engineered for 90% lower energy OpEx and 25% higher crop yield.
-              </p>
-              <div class="tags">
-                <span class="tag">Architectural Design</span>
-                <span class="tag">Systems Integration</span>
-                <span class="tag">Clean Tech</span>
-              </div>
-              <div class="card-footer">
-                <a href="case-studies.html" class="arrow-link">View case study <span class="arr">→</span></a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 -->
-          <div class="work-card">
-            <div class="work-card-visual sage-bg">
-              <svg viewBox="0 0 320 200" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-                <!-- Simple decision framework diagram -->
-                <rect x="120" y="40" width="80" height="36" rx="2" fill="rgba(245,240,230,0.22)"/>
-                <line x1="160" y1="76" x2="160" y2="98" stroke="rgba(245,240,230,0.3)" stroke-width="2"/>
-                <rect x="60"  y="98" width="70" height="30" rx="2" fill="rgba(245,240,230,0.22)"/>
-                <rect x="190" y="98" width="70" height="30" rx="2" fill="rgba(245,240,230,0.22)"/>
-                <line x1="160" y1="98" x2="95"  y2="98" stroke="rgba(245,240,230,0.3)" stroke-width="2"/>
-                <line x1="160" y1="98" x2="225" y2="98" stroke="rgba(245,240,230,0.3)" stroke-width="2"/>
-                <line x1="95"  y1="128" x2="95"  y2="148" stroke="rgba(245,240,230,0.3)" stroke-width="2"/>
-                <line x1="225" y1="128" x2="225" y2="148" stroke="rgba(245,240,230,0.3)" stroke-width="2"/>
-                <rect x="60"  y="148" width="70" height="28" rx="2" fill="rgba(245,240,230,0.15)"/>
-                <rect x="190" y="148" width="70" height="28" rx="2" fill="rgba(245,240,230,0.15)"/>
-              </svg>
-            </div>
-            <div class="work-card-body">
-              <p class="card-num">02 — Can Grow Here, Inc.</p>
-              <h3 class="card-title">R&D Decision Framework</h3>
-              <p class="card-company">Design Project Manager · 2025</p>
-              <p class="card-desc">
-                Waterfall decision framework mapping system interdependencies, capital constraints, and
-                design tradeoffs — supporting leadership, investor engagement, and market validation.
-              </p>
-              <div class="tags">
-                <span class="tag">Systems Thinking</span>
-                <span class="tag">Strategy</span>
-                <span class="tag">R&D Management</span>
-              </div>
-              <div class="card-footer">
-                <a href="case-studies.html" class="arrow-link">View case study <span class="arr">→</span></a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
+    </div>
   </main>
 
+  <!-- ══ FOOTER ══ -->
   <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="label-muted">Contact</span>
+    <div class="footer-inner">
+      <div class="footer-contact">
         <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
-        <a href="tel:6477663909">647-766-3909</a>
-        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="f-sep">·</span>
+        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <div class="footer-col">
-        <span class="label-muted">Navigate</span>
+      <div class="footer-nav">
         <a href="case-studies.html">Work</a>
+        <span class="f-sep">·</span>
         <a href="cv.html">Resume</a>
+        <span class="f-sep">·</span>
         <a href="blog.html">Writing</a>
-      </div>
-      <div class="footer-col">
-        <span class="label-muted">Credentials</span>
-        <p>LEED Green Associate</p>
-        <p>BDes Environmental Design — OCAD</p>
-        <p>BA Philosophy — Delhi University</p>
-      </div>
-      <div class="footer-brand">
-        <p class="footer-name">Neela Madhu</p>
-        <p class="footer-sub">Toronto, Canada · 2026</p>
       </div>
     </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('.nav-links a').forEach(a => {
-      if (a.getAttribute('href') === 'index.html' || a.getAttribute('href') === './') {
-        a.classList.add('active');
-      }
-    });
-  </script>
 </body>
 </html>

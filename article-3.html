@@ -26,15 +26,15 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--olive);
+      color: var(--green-mid);
       margin-bottom: 0.85rem;
       display: block;
     }
 
     .article-title {
-      font-family: var(--serif);
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 400;
+      font-family: var(--sans);
+      font-size: clamp(1.75rem, 4vw, 2.7rem);
+      font-weight: 700;
       line-height: 1.1;
       letter-spacing: -0.01em;
       margin-bottom: 1.25rem;
@@ -51,7 +51,7 @@
     .article-body p {
       font-size: 0.975rem;
       line-height: 1.8;
-      color: var(--dark);
+      color: var(--green);
       margin-bottom: 1.5rem;
     }
 
@@ -67,13 +67,23 @@
 
     .article-reference strong {
       font-weight: 500;
-      color: var(--dark);
+      color: var(--green);
       display: block;
       margin-bottom: 0.25rem;
       font-size: 0.65rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
     }
+
+    .article-reference a {
+      color: var(--green);
+      text-decoration: underline;
+      text-decoration-color: var(--border);
+      text-underline-offset: 3px;
+      transition: text-decoration-color 0.18s;
+    }
+
+    .article-reference a:hover { text-decoration-color: var(--green); }
 
     .article-nav {
       margin-top: 3rem;
@@ -87,13 +97,13 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Neela Madhu</a>
+    <nav>
+    <a href="index.html" class="nav-logo">Neela M.</a>
     <ul class="nav-links">
       <li><a href="case-studies.html">Work</a></li>
       <li><a href="cv.html">Resume</a></li>
       <li><a href="blog.html" class="active">Writing</a></li>
-      <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
+      <li><a href="mailto:neelambari.am@gmail.com">Contact</a></li>
     </ul>
   </nav>
 
@@ -140,7 +150,7 @@
 
         <div class="article-reference">
           <strong>Reference</strong>
-          Navigating Budget 2025: Signals for Canadian Agriculture and Agri-Food — Canadian Agri-Food Policy Institute
+          <a href="https://capi-icpa.ca/events/capi-webinars/navigating-budget-2025-signals-for-canadian-agriculture-and-agri-food/" target="_blank" rel="noopener">Navigating Budget 2025: Signals for Canadian Agriculture and Agri-Food — Canadian Agri-Food Policy Institute ↗</a>
         </div>
 
         <div class="article-nav">
@@ -154,29 +164,19 @@
     </div>
   </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="label-muted">Contact</span>
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
         <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
-        <a href="tel:6477663909">647-766-3909</a>
-        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="f-sep">·</span>
+        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <div class="footer-col">
-        <span class="label-muted">Navigate</span>
+      <div class="footer-nav">
         <a href="case-studies.html">Work</a>
+        <span class="f-sep">·</span>
         <a href="cv.html">Resume</a>
+        <span class="f-sep">·</span>
         <a href="blog.html">Writing</a>
-      </div>
-      <div class="footer-col">
-        <span class="label-muted">Credentials</span>
-        <p>LEED Green Associate</p>
-        <p>BDes Environmental Design — OCAD</p>
-        <p>BA Philosophy — Delhi University</p>
-      </div>
-      <div class="footer-brand">
-        <p class="footer-name">Neela Madhu</p>
-        <p class="footer-sub">Toronto, Canada · 2026</p>
       </div>
     </div>
   </footer>

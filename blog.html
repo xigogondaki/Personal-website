@@ -12,19 +12,62 @@
       padding: 0 var(--px);
     }
 
+    /* ── PAGE HEADER SPLIT ── */
+    .page-header-split {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 3rem;
+      padding: 3rem 0 2.25rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 2.5rem;
+    }
+
+    .page-header-split .page-header-text { flex: 1; }
+    .page-header-split .label { margin-bottom: 0.85rem; }
+
+    .page-header-split h1 {
+      font-family: var(--sans);
+      font-size: clamp(1.9rem, 4vw, 3.1rem);
+      font-weight: 700;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    .page-header-split p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      max-width: 540px;
+      line-height: 1.72;
+    }
+
+    .page-header-graphic {
+      flex-shrink: 0;
+      opacity: 0.82;
+    }
+
     /* ── POST LIST ── */
     .post-list { display: flex; flex-direction: column; }
 
     .post-entry {
       display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 0 3rem;
+      grid-template-columns: 140px 1fr 80px;
+      gap: 0 2.5rem;
       padding: 2.25rem 0;
       border-top: 1px solid var(--border);
       align-items: start;
     }
 
-    .post-entry:hover .post-title { color: var(--olive); }
+    .post-entry:hover .post-title { color: var(--green-mid); }
+
+    .post-visual {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-end;
+      padding-top: 0.25rem;
+      opacity: 0.7;
+    }
 
     .post-date {
       font-size: 0.75rem;
@@ -40,15 +83,15 @@
       font-weight: 500;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--olive);
+      color: var(--green-mid);
       margin-bottom: 0.5rem;
       display: block;
     }
 
     .post-title {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: clamp(1.3rem, 2.5vw, 1.75rem);
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.2;
       margin-bottom: 0.75rem;
       transition: color 0.2s;
@@ -102,7 +145,7 @@
     }
 
     .post-featured .post-title {
-      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+      font-size: clamp(1.7rem, 3.2vw, 2.5rem); font-family: var(--sans); font-weight: 700;
     }
 
     .post-featured .post-excerpt {
@@ -134,8 +177,10 @@
     @media (max-width: 860px) {
       .post-entry { grid-template-columns: 1fr; gap: 0.4rem; }
       .post-date { padding-top: 0; }
+      .post-visual { display: none; }
       .post-featured { grid-template-columns: 1fr; }
       .post-featured-visual { display: none; }
+      .page-header-graphic { display: none; }
     }
 
     @media (max-width: 600px) {
@@ -145,33 +190,103 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Neela Madhu</a>
+    <nav>
+    <a href="index.html" class="nav-logo">Neela M.</a>
     <ul class="nav-links">
       <li><a href="case-studies.html">Work</a></li>
       <li><a href="cv.html">Resume</a></li>
       <li><a href="blog.html" class="active">Writing</a></li>
-      <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
+      <li><a href="mailto:neelambari.am@gmail.com">Contact</a></li>
     </ul>
   </nav>
 
   <main>
     <div class="blog-layout">
 
-      <div class="page-header">
-        <span class="label">Writing</span>
-        <h1>Field Notes: Research<br>&amp; Observations</h1>
-        <p>
-          Writing at the intersection of clean technology, built environment policy, and design thinking.
-          On the systems, tradeoffs, and decisions shaping how we innovate and build.
-        </p>
+      <div class="page-header-split">
+        <div class="page-header-text">
+          <span class="label">Writing</span>
+          <h1>Field Notes: Research<br>&amp; Observations</h1>
+          <p>
+            Writing at the intersection of clean technology, built environment policy, and design thinking.
+            On the systems, tradeoffs, and decisions shaping how we innovate and build.
+          </p>
+        </div>
+        <div class="page-header-graphic">
+          <!-- Binoculars · Journal · Leaf — stylized field-notes graphic -->
+          <svg viewBox="0 0 180 220" xmlns="http://www.w3.org/2000/svg" width="160" height="196" aria-hidden="true">
+
+            <!-- ── LEAF (top-right) ── -->
+            <path d="M 148,12 C 170,22 178,52 158,72 C 142,88 115,90 106,76 C 92,57 98,26 124,14 Z"
+              fill="none" stroke="#1C5240" stroke-width="1.4" opacity="0.65"/>
+            <line x1="148" y1="12" x2="112" y2="76" stroke="#1C5240" stroke-width="0.8" opacity="0.45"/>
+            <line x1="138" y1="28" x2="158" y2="46" stroke="#1C5240" stroke-width="0.6" opacity="0.35"/>
+            <line x1="128" y1="46" x2="155" y2="58" stroke="#1C5240" stroke-width="0.6" opacity="0.35"/>
+            <line x1="119" y1="62" x2="138" y2="72" stroke="#1C5240" stroke-width="0.6" opacity="0.35"/>
+            <line x1="112" y1="76" x2="108" y2="94" stroke="#1C5240" stroke-width="0.8" opacity="0.38"/>
+
+            <!-- ── JOURNAL / NOTEBOOK (left-center) ── -->
+            <!-- cover -->
+            <rect x="14" y="50" width="60" height="80" rx="2"
+              fill="none" stroke="#1C5240" stroke-width="1.4" opacity="0.65"/>
+            <!-- spine -->
+            <line x1="26" y1="50" x2="26" y2="130" stroke="#1C5240" stroke-width="1.4" opacity="0.65"/>
+            <!-- page-stack at right edge (subtle depth) -->
+            <line x1="72" y1="52" x2="76" y2="55" stroke="#1C5240" stroke-width="0.7" opacity="0.28"/>
+            <line x1="72" y1="128" x2="76" y2="125" stroke="#1C5240" stroke-width="0.7" opacity="0.28"/>
+            <!-- ruled lines -->
+            <line x1="32" y1="68" x2="68" y2="68" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <line x1="32" y1="78" x2="68" y2="78" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <line x1="32" y1="88" x2="68" y2="88" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <line x1="32" y1="98" x2="68" y2="98" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <line x1="32" y1="108" x2="68" y2="108" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <line x1="32" y1="118" x2="58" y2="118" stroke="#1C5240" stroke-width="0.7" opacity="0.38"/>
+            <!-- bookmark ribbon -->
+            <line x1="60" y1="50" x2="60" y2="38" stroke="#1C5240" stroke-width="1.2" opacity="0.45"/>
+            <!-- small pencil mark suggestion (short diagonal) -->
+            <line x1="32" y1="71" x2="44" y2="68" stroke="#1C5240" stroke-width="1.0" opacity="0.28"/>
+
+            <!-- ── BINOCULARS (bottom center) ── -->
+            <!-- left barrel outer -->
+            <circle cx="56" cy="178" r="24"
+              fill="none" stroke="#1C5240" stroke-width="1.4" opacity="0.65"/>
+            <!-- left lens ring -->
+            <circle cx="56" cy="178" r="14"
+              fill="none" stroke="#1C5240" stroke-width="0.9" opacity="0.48"/>
+            <!-- left lens centre -->
+            <circle cx="56" cy="178" r="4" fill="#1C5240" opacity="0.22"/>
+            <!-- left highlight -->
+            <circle cx="50" cy="172" r="2.5" fill="none" stroke="#1C5240" stroke-width="0.7" opacity="0.28"/>
+
+            <!-- right barrel outer -->
+            <circle cx="116" cy="178" r="24"
+              fill="none" stroke="#1C5240" stroke-width="1.4" opacity="0.65"/>
+            <!-- right lens ring -->
+            <circle cx="116" cy="178" r="14"
+              fill="none" stroke="#1C5240" stroke-width="0.9" opacity="0.48"/>
+            <!-- right lens centre -->
+            <circle cx="116" cy="178" r="4" fill="#1C5240" opacity="0.22"/>
+            <!-- right highlight -->
+            <circle cx="110" cy="172" r="2.5" fill="none" stroke="#1C5240" stroke-width="0.7" opacity="0.28"/>
+
+            <!-- bridge -->
+            <rect x="74" y="170" width="24" height="16" rx="3"
+              fill="none" stroke="#1C5240" stroke-width="1.2" opacity="0.55"/>
+            <!-- focus knob -->
+            <rect x="82" y="158" width="8" height="14" rx="2"
+              fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.45"/>
+
+            <!-- ── FINE DETAIL — small crosshair dot ── -->
+            <circle cx="148" cy="148" r="1.5" fill="#1C5240" opacity="0.28"/>
+          </svg>
+        </div>
       </div>
 
       <!-- ── FEATURED POST ── -->
       <div class="post-featured">
         <div>
           <span class="post-category">Energy · Agri-food</span>
-          <h2 class="post-title">Energy Volatility and the Case for Electric CEA Infrastructure</h2>
+          <h2 class="post-title">Energy comes up in every conversation about CEA</h2>
           <p class="post-excerpt">
             Energy remains the hidden variable in almost every conversation about the future of food.
             With global energy markets reeling from geopolitical tensions, natural gas prices have spiked —
@@ -218,7 +333,7 @@
           </div>
           <div class="post-content">
             <span class="post-category">Policy · Infrastructure</span>
-            <h3 class="post-title">Shifting the Cost Curve: The Structural Economics of Canadian Greenhouse Production</h3>
+            <h3 class="post-title">The cost curve &amp; structural economics of Canadian greenhouse production</h3>
             <p class="post-excerpt">
               Canadian greenhouse production is at a structural inflection point. Federal policy signals are
               reinforcing domestic food security as a strategic priority — but capital incentives alone don't
@@ -229,6 +344,30 @@
               <span class="post-read-time">5 min read</span>
               <a href="article-2.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
+          </div>
+          <!-- Cost curve abstraction -->
+          <div class="post-visual">
+            <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="72" height="80" aria-hidden="true">
+              <!-- Axes -->
+              <line x1="14" y1="10" x2="14" y2="72" stroke="#1C5240" stroke-width="1.0" opacity="0.5"/>
+              <line x1="14" y1="72" x2="72" y2="72" stroke="#1C5240" stroke-width="1.0" opacity="0.5"/>
+              <!-- Axis arrow tips -->
+              <polyline points="10,14 14,10 18,14" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.45"/>
+              <polyline points="68,68 72,72 68,76" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.45"/>
+              <!-- Cost curve: starts high-left, slopes steeply, then levels off -->
+              <path d="M 16,18 C 20,22 24,42 32,54 C 40,64 52,67 68,67"
+                fill="none" stroke="#1C5240" stroke-width="1.5" opacity="0.7"/>
+              <!-- Second shifted curve (dashed) — represents curve shift -->
+              <path d="M 16,28 C 20,32 26,50 36,60 C 46,68 58,70 68,70"
+                fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.35"
+                stroke-dasharray="3 2"/>
+              <!-- Shift arrow -->
+              <line x1="30" y1="48" x2="30" y2="57" stroke="#1C5240" stroke-width="0.9" opacity="0.45"/>
+              <polyline points="27,55 30,58 33,55" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.45"/>
+              <!-- Axis labels (tiny) -->
+              <text x="6" y="14" font-family="DM Sans, sans-serif" font-size="5.5" fill="#1C5240" opacity="0.45">$</text>
+              <text x="68" y="80" font-family="DM Sans, sans-serif" font-size="5.5" fill="#1C5240" opacity="0.45">Q</text>
+            </svg>
           </div>
         </div>
 
@@ -251,6 +390,27 @@
               <a href="article-3.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
           </div>
+          <!-- Budget/allocation abstraction: stacked bar with cut line -->
+          <div class="post-visual">
+            <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="72" height="80" aria-hidden="true">
+              <!-- Three vertical bars suggesting budget allocation -->
+              <rect x="14" y="22" width="14" height="50" rx="1" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <rect x="33" y="30" width="14" height="42" rx="1" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <rect x="52" y="12" width="14" height="60" rx="1" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <!-- Fill portions -->
+              <rect x="14" y="22" width="14" height="50" rx="1" fill="#1C5240" opacity="0.10"/>
+              <rect x="33" y="30" width="14" height="42" rx="1" fill="#1C5240" opacity="0.10"/>
+              <rect x="52" y="12" width="14" height="60" rx="1" fill="#1C5240" opacity="0.10"/>
+              <!-- Cut/reduction line on third bar -->
+              <line x1="50" y1="35" x2="68" y2="35" stroke="#1C5240" stroke-width="1.2" opacity="0.6"
+                stroke-dasharray="3 1.5"/>
+              <!-- Arrow pointing down (cut) -->
+              <line x1="59" y1="35" x2="59" y2="48" stroke="#1C5240" stroke-width="0.9" opacity="0.5"/>
+              <polyline points="56,46 59,49 62,46" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.5"/>
+              <!-- Baseline -->
+              <line x1="10" y1="72" x2="70" y2="72" stroke="#1C5240" stroke-width="0.8" opacity="0.35"/>
+            </svg>
+          </div>
         </div>
 
         <!-- Post 4 -->
@@ -260,7 +420,7 @@
           </div>
           <div class="post-content">
             <span class="post-category">AgTech · Innovation</span>
-            <h3 class="post-title">Canada's AgTech Talent Gap: A Strategic Risk We Can't Ignore</h3>
+            <h3 class="post-title">Canada's ag-tech talent gap: A strategic risk</h3>
             <p class="post-excerpt">
               Less than 1% of STEM graduates are choosing careers in agriculture-related occupations.
               Public investment in Canadian agriculture has declined 15%, and R&D spending is down 77%.
@@ -272,6 +432,34 @@
               <a href="article-4.html" class="arrow-link">Read more <span class="arr">→</span></a>
             </div>
           </div>
+          <!-- Talent/network flow abstraction: funnel or node network -->
+          <div class="post-visual">
+            <svg viewBox="0 0 80 90" xmlns="http://www.w3.org/2000/svg" width="72" height="80" aria-hidden="true">
+              <!-- Network nodes: 4 top, converging to 1 -->
+              <!-- Top nodes -->
+              <circle cx="18" cy="18" r="5" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <circle cx="38" cy="12" r="5" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <circle cx="58" cy="18" r="5" fill="none" stroke="#1C5240" stroke-width="1.0" opacity="0.55"/>
+              <circle cx="28" cy="30" r="4" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.40"/>
+              <!-- Connections to mid node -->
+              <circle cx="40" cy="50" r="6" fill="#1C5240" opacity="0.18" stroke="#1C5240" stroke-width="1.1" opacity="0.60"/>
+              <line x1="22" y1="22" x2="36" y2="45" stroke="#1C5240" stroke-width="0.8" opacity="0.42"/>
+              <line x1="38" y1="17" x2="40" y2="44" stroke="#1C5240" stroke-width="0.8" opacity="0.42"/>
+              <line x1="54" y1="22" x2="44" y2="45" stroke="#1C5240" stroke-width="0.8" opacity="0.42"/>
+              <line x1="31" y1="33" x2="37" y2="46" stroke="#1C5240" stroke-width="0.7" opacity="0.35"/>
+              <!-- Output arrow going down-right (drain south) — then blocked -->
+              <line x1="44" y1="55" x2="58" y2="68" stroke="#1C5240" stroke-width="0.9" opacity="0.45"
+                stroke-dasharray="3 2"/>
+              <polyline points="55,66 58,69 61,66" fill="none" stroke="#1C5240" stroke-width="0.8" opacity="0.45"/>
+              <!-- X mark at end — "can't ignore" / blockage -->
+              <line x1="55" y1="72" x2="64" y2="80" stroke="#1C5240" stroke-width="1.0" opacity="0.40"/>
+              <line x1="64" y1="72" x2="55" y2="80" stroke="#1C5240" stroke-width="1.0" opacity="0.40"/>
+              <!-- Small label dots -->
+              <circle cx="18" cy="18" r="1.5" fill="#1C5240" opacity="0.35"/>
+              <circle cx="38" cy="12" r="1.5" fill="#1C5240" opacity="0.35"/>
+              <circle cx="58" cy="18" r="1.5" fill="#1C5240" opacity="0.35"/>
+            </svg>
+          </div>
         </div>
 
       </div>
@@ -279,29 +467,19 @@
     </div>
   </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="label-muted">Contact</span>
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
         <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
-        <a href="tel:6477663909">647-766-3909</a>
-        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="f-sep">·</span>
+        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <div class="footer-col">
-        <span class="label-muted">Navigate</span>
+      <div class="footer-nav">
         <a href="case-studies.html">Work</a>
+        <span class="f-sep">·</span>
         <a href="cv.html">Resume</a>
+        <span class="f-sep">·</span>
         <a href="blog.html">Writing</a>
-      </div>
-      <div class="footer-col">
-        <span class="label-muted">Credentials</span>
-        <p>LEED Green Associate</p>
-        <p>BDes Environmental Design — OCAD</p>
-        <p>BA Philosophy — Delhi University</p>
-      </div>
-      <div class="footer-brand">
-        <p class="footer-name">Neela Madhu</p>
-        <p class="footer-sub">Toronto, Canada · 2026</p>
       </div>
     </div>
   </footer>

@@ -38,9 +38,7 @@
       justify-content: center;
     }
 
-    .cs-visual.olive-bg  { background: #A08D18; }
-    .cs-visual.sage-bg   { background: #5D6B50; }
-    .cs-visual.dark-bg   { background: #3D1900; }
+    .cs-visual { background: #1C5240; }
 
     .cs-visual svg {
       width: 100%;
@@ -65,7 +63,7 @@
     }
 
     .cs-num {
-      font-family: var(--serif);
+      font-family: var(--sans);
       font-size: 3.5rem;
       font-weight: 300;
       line-height: 1;
@@ -77,13 +75,13 @@
       font-weight: 500;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--olive);
+      color: var(--green-mid);
     }
 
     .cs-title {
-      font-family: var(--serif);
-      font-size: clamp(1.75rem, 3vw, 2.5rem);
-      font-weight: 400;
+      font-family: var(--sans);
+      font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+      font-weight: 700;
       line-height: 1.1;
       margin-bottom: 0.6rem;
     }
@@ -125,7 +123,7 @@
 
     .cs-outcomes li {
       font-size: 0.85rem;
-      color: var(--dark);
+      color: var(--green);
       padding-left: 1rem;
       position: relative;
       line-height: 1.5;
@@ -135,7 +133,7 @@
       content: '→';
       position: absolute;
       left: 0;
-      color: var(--olive);
+      color: var(--green-mid);
       font-size: 0.7rem;
       top: 0.15rem;
     }
@@ -161,13 +159,13 @@
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Neela Madhu</a>
+    <nav>
+    <a href="index.html" class="nav-logo">Neela M.</a>
     <ul class="nav-links">
       <li><a href="case-studies.html" class="active">Work</a></li>
       <li><a href="cv.html">Resume</a></li>
       <li><a href="blog.html">Writing</a></li>
-      <li><a href="mailto:neelambari.am@gmail.com" class="nav-pill">Contact</a></li>
+      <li><a href="mailto:neelambari.am@gmail.com">Contact</a></li>
     </ul>
   </nav>
 
@@ -178,8 +176,8 @@
         <span class="label">Case Studies</span>
         <h1>Work &amp; Projects</h1>
         <p>
-          Selected projects spanning systems design, infrastructure development, and design strategy —
-          from clean technology startups to residential architecture.
+          Selected projects spanning systems design, infrastructure development, and design strategy
+          in clean technology and the built environment.
         </p>
       </div>
 
@@ -187,41 +185,47 @@
 
         <!-- ── CASE STUDY 01 ── -->
         <div class="cs-entry">
-          <div class="cs-visual olive-bg">
+          <div class="cs-visual" style="background:#1C5240;">
             <svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <!-- Dot grid -->
-              <defs>
-                <pattern id="dots1" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.2" fill="rgba(245,240,230,0.14)"/>
-                </pattern>
-              </defs>
-              <rect width="560" height="460" fill="url(#dots1)"/>
-              <!-- Greenhouse silhouette: large, centred -->
-              <rect x="100" y="250" width="340" height="150" fill="rgba(245,240,230,0.18)"/>
-              <!-- Glass panels -->
-              <rect x="116" y="268" width="80" height="112" fill="rgba(245,240,230,0.22)"/>
-              <rect x="212" y="268" width="80" height="112" fill="rgba(245,240,230,0.22)"/>
-              <rect x="308" y="268" width="80" height="112" fill="rgba(245,240,230,0.22)"/>
-              <!-- Mullion -->
-              <rect x="100" y="318" width="340" height="5" fill="rgba(160,141,24,0.6)"/>
-              <!-- Peaked roof -->
-              <polygon points="82,250 270,112 458,250" fill="rgba(245,240,230,0.18)"/>
-              <!-- Sun circle -->
-              <circle cx="100" cy="130" r="38" fill="none" stroke="rgba(245,240,230,0.28)" stroke-width="3"/>
-              <circle cx="100" cy="130" r="7" fill="rgba(245,240,230,0.28)"/>
-              <!-- Plants -->
-              <ellipse cx="148" cy="355" rx="15" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <ellipse cx="170" cy="355" rx="12" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <ellipse cx="244" cy="355" rx="15" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <ellipse cx="266" cy="355" rx="12" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <ellipse cx="340" cy="355" rx="15" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <ellipse cx="362" cy="355" rx="12" ry="19" fill="rgba(93,107,80,0.55)"/>
-              <!-- Ground -->
-              <rect x="60" y="398" width="420" height="7" rx="3.5" fill="rgba(245,240,230,0.22)"/>
-              <!-- Tree -->
-              <rect x="478" y="318" width="13" height="80" fill="rgba(93,107,80,0.55)"/>
-              <circle cx="484" cy="272" r="46" fill="rgba(93,107,80,0.55)"/>
-              <circle cx="460" cy="300" r="28" fill="rgba(93,107,80,0.55)"/>
+              <!-- Faint grid -->
+              <line x1="0" y1="115" x2="560" y2="115" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="0" y1="230" x2="560" y2="230" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="0" y1="345" x2="560" y2="345" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="140" y1="0" x2="140" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="280" y1="0" x2="280" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="420" y1="0" x2="420" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <!-- Topographic contours centred on (280, 230) -->
+              <ellipse cx="280" cy="230" rx="230" ry="200" fill="none" stroke="#F5F1E3" stroke-width="0.4" opacity="0.18"/>
+              <ellipse cx="278" cy="228" rx="198" ry="172" fill="none" stroke="#F5F1E3" stroke-width="0.5" opacity="0.22"/>
+              <ellipse cx="282" cy="232" rx="167" ry="145" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.28"/>
+              <ellipse cx="279" cy="228" rx="137" ry="119" fill="none" stroke="#F5F1E3" stroke-width="0.75" opacity="0.35"
+                stroke-dasharray="560 80" stroke-dashoffset="-30"/>
+              <ellipse cx="281" cy="231" rx="109" ry="94" fill="none" stroke="#F5F1E3" stroke-width="0.9" opacity="0.42"/>
+              <ellipse cx="280" cy="229" rx="82" ry="71" fill="#F5F1E3" fill-opacity="0.04" stroke="#F5F1E3" stroke-width="1.1" opacity="0.50"/>
+              <ellipse cx="280" cy="231" rx="57" ry="49" fill="#F5F1E3" fill-opacity="0.07" stroke="#F5F1E3" stroke-width="1.4" opacity="0.60"/>
+              <ellipse cx="279" cy="230" rx="35" ry="30" fill="#F5F1E3" fill-opacity="0.10" stroke="#F5F1E3" stroke-width="1.8" opacity="0.70"/>
+              <ellipse cx="280" cy="230" rx="17" ry="14" fill="#F5F1E3" fill-opacity="0.16" stroke="#F5F1E3" stroke-width="2.2" opacity="0.80"/>
+              <!-- Centre mark -->
+              <circle cx="280" cy="230" r="4.5" fill="#F5F1E3" opacity="0.75"/>
+              <circle cx="280" cy="230" r="1.8" fill="#1C5240"/>
+              <!-- Cross-hair -->
+              <line x1="280" y1="208" x2="280" y2="252" stroke="#F5F1E3" stroke-width="0.5" opacity="0.20"/>
+              <line x1="258" y1="230" x2="302" y2="230" stroke="#F5F1E3" stroke-width="0.5" opacity="0.20"/>
+              <!-- Modular grid overlay (facility sections) — top-right quadrant -->
+              <rect x="330" y="80" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.22"/>
+              <rect x="380" y="80" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.22"/>
+              <rect x="430" y="80" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.22"/>
+              <rect x="330" y="122" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.18"/>
+              <rect x="380" y="122" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.18"/>
+              <rect x="430" y="122" width="48" height="40" rx="1" fill="none" stroke="#F5F1E3" stroke-width="0.6" opacity="0.18"/>
+              <!-- Cardinal ticks -->
+              <line x1="280" y1="30" x2="280" y2="18" stroke="#F5F1E3" stroke-width="0.8" opacity="0.25"/>
+              <line x1="280" y1="430" x2="280" y2="442" stroke="#F5F1E3" stroke-width="0.8" opacity="0.25"/>
+              <line x1="530" y1="230" x2="542" y2="230" stroke="#F5F1E3" stroke-width="0.8" opacity="0.25"/>
+              <line x1="30" y1="230" x2="18" y2="230" stroke="#F5F1E3" stroke-width="0.8" opacity="0.25"/>
+              <!-- Coordinate text -->
+              <text x="22" y="450" font-family="DM Sans, sans-serif" font-size="9" fill="#F5F1E3" opacity="0.25"
+                letter-spacing="1.5" font-weight="500">43°41′N · 79°23′W</text>
             </svg>
           </div>
 
@@ -269,39 +273,60 @@
 
         <!-- ── CASE STUDY 02 ── -->
         <div class="cs-entry reverse">
-          <div class="cs-visual sage-bg">
+          <div class="cs-visual" style="background:#2A6654;">
             <svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <pattern id="dots2" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.2" fill="rgba(245,240,230,0.12)"/>
-                </pattern>
-              </defs>
-              <rect width="560" height="460" fill="url(#dots2)"/>
-              <!-- Decision framework diagram -->
-              <!-- Top node -->
-              <rect x="220" y="80" width="120" height="48" rx="3" fill="rgba(245,240,230,0.22)"/>
-              <line x1="280" y1="128" x2="280" y2="162" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <!-- Connector horizontal -->
-              <line x1="130" y1="162" x2="430" y2="162" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <!-- Left branch -->
-              <line x1="130" y1="162" x2="130" y2="196" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="70"  y="196" width="120" height="44" rx="3" fill="rgba(245,240,230,0.22)"/>
-              <line x1="130" y1="240" x2="130" y2="274" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="70"  y="274" width="120" height="44" rx="3" fill="rgba(245,240,230,0.15)"/>
-              <!-- Center branch -->
-              <line x1="280" y1="162" x2="280" y2="196" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="220" y="196" width="120" height="44" rx="3" fill="rgba(245,240,230,0.22)"/>
-              <line x1="280" y1="240" x2="280" y2="274" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="220" y="274" width="120" height="44" rx="3" fill="rgba(245,240,230,0.15)"/>
-              <!-- Right branch -->
-              <line x1="430" y1="162" x2="430" y2="196" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="370" y="196" width="120" height="44" rx="3" fill="rgba(245,240,230,0.22)"/>
-              <line x1="430" y1="240" x2="430" y2="274" stroke="rgba(245,240,230,0.3)" stroke-width="2.5"/>
-              <rect x="370" y="274" width="120" height="44" rx="3" fill="rgba(245,240,230,0.15)"/>
-              <!-- Bottom convergence -->
-              <line x1="130" y1="318" x2="430" y2="318" stroke="rgba(245,240,230,0.22)" stroke-width="2"/>
-              <line x1="280" y1="318" x2="280" y2="352" stroke="rgba(245,240,230,0.22)" stroke-width="2"/>
-              <rect x="200" y="352" width="160" height="48" rx="3" fill="rgba(245,240,230,0.18)"/>
+              <!-- Faint grid -->
+              <line x1="0" y1="115" x2="560" y2="115" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="0" y1="230" x2="560" y2="230" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="0" y1="345" x2="560" y2="345" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="140" y1="0" x2="140" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="280" y1="0" x2="280" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+              <line x1="420" y1="0" x2="420" y2="460" stroke="#F5F1E3" stroke-width="0.35" opacity="0.08"/>
+
+              <!-- Waterfall / decision framework — elegant line diagram -->
+              <!-- Stage labels (horizontal lines + dots) -->
+              <!-- Stage 1: PoC -->
+              <line x1="80" y1="95" x2="480" y2="95" stroke="#F5F1E3" stroke-width="0.5" opacity="0.18"/>
+              <circle cx="80" cy="95" r="5" fill="none" stroke="#F5F1E3" stroke-width="1.0" opacity="0.45"/>
+              <circle cx="80" cy="95" r="1.8" fill="#F5F1E3" opacity="0.55"/>
+              <text x="90" y="92" font-family="DM Sans, sans-serif" font-size="8.5" fill="#F5F1E3" opacity="0.35" letter-spacing="1.5" font-weight="500">POC</text>
+
+              <!-- Stage 2: Pilot -->
+              <line x1="80" y1="200" x2="480" y2="200" stroke="#F5F1E3" stroke-width="0.5" opacity="0.18"/>
+              <circle cx="80" cy="200" r="5" fill="none" stroke="#F5F1E3" stroke-width="1.0" opacity="0.45"/>
+              <circle cx="80" cy="200" r="1.8" fill="#F5F1E3" opacity="0.55"/>
+              <text x="90" y="197" font-family="DM Sans, sans-serif" font-size="8.5" fill="#F5F1E3" opacity="0.35" letter-spacing="1.5" font-weight="500">PILOT</text>
+
+              <!-- Stage 3: MVP -->
+              <line x1="80" y1="305" x2="480" y2="305" stroke="#F5F1E3" stroke-width="0.5" opacity="0.18"/>
+              <circle cx="80" cy="305" r="5" fill="none" stroke="#F5F1E3" stroke-width="1.0" opacity="0.45"/>
+              <circle cx="80" cy="305" r="1.8" fill="#F5F1E3" opacity="0.55"/>
+              <text x="90" y="302" font-family="DM Sans, sans-serif" font-size="8.5" fill="#F5F1E3" opacity="0.35" letter-spacing="1.5" font-weight="500">MVP</text>
+
+              <!-- Decision nodes — 3 per stage, connected downward -->
+              <!-- PoC nodes -->
+              <rect x="140" y="74" width="72" height="42" rx="2" fill="rgba(245,241,227,0.12)" stroke="#F5F1E3" stroke-width="0.8" opacity="0.38"/>
+              <rect x="234" y="74" width="72" height="42" rx="2" fill="rgba(245,241,227,0.12)" stroke="#F5F1E3" stroke-width="0.8" opacity="0.38"/>
+              <rect x="328" y="74" width="72" height="42" rx="2" fill="rgba(245,241,227,0.12)" stroke="#F5F1E3" stroke-width="0.8" opacity="0.38"/>
+
+              <!-- Connector lines PoC → Pilot -->
+              <line x1="176" y1="116" x2="270" y2="179" stroke="#F5F1E3" stroke-width="0.9" opacity="0.28"/>
+              <line x1="270" y1="116" x2="270" y2="179" stroke="#F5F1E3" stroke-width="0.9" opacity="0.28"/>
+              <line x1="364" y1="116" x2="270" y2="179" stroke="#F5F1E3" stroke-width="0.9" opacity="0.28"/>
+
+              <!-- Pilot nodes -->
+              <rect x="186" y="179" width="72" height="42" rx="2" fill="rgba(245,241,227,0.15)" stroke="#F5F1E3" stroke-width="0.9" opacity="0.45"/>
+              <rect x="282" y="179" width="72" height="42" rx="2" fill="rgba(245,241,227,0.15)" stroke="#F5F1E3" stroke-width="0.9" opacity="0.45"/>
+
+              <!-- Connector lines Pilot → MVP -->
+              <line x1="222" y1="221" x2="270" y2="284" stroke="#F5F1E3" stroke-width="1.0" opacity="0.35"/>
+              <line x1="318" y1="221" x2="270" y2="284" stroke="#F5F1E3" stroke-width="1.0" opacity="0.35"/>
+
+              <!-- MVP node (converged) -->
+              <rect x="210" y="284" width="120" height="42" rx="2" fill="rgba(245,241,227,0.20)" stroke="#F5F1E3" stroke-width="1.1" opacity="0.60"/>
+
+              <!-- Diagonal reference line -->
+              <line x1="60" y1="60" x2="500" y2="410" stroke="#F5F1E3" stroke-width="0.3" opacity="0.08"/>
             </svg>
           </div>
 
@@ -344,104 +369,23 @@
           </div>
         </div>
 
-        <!-- ── CASE STUDY 03 ── -->
-        <div class="cs-entry">
-          <div class="cs-visual dark-bg">
-            <svg viewBox="0 0 560 460" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-              <defs>
-                <pattern id="dots3" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse">
-                  <circle cx="2" cy="2" r="1.2" fill="rgba(245,240,230,0.10)"/>
-                </pattern>
-              </defs>
-              <rect width="560" height="460" fill="url(#dots3)"/>
-              <!-- Floor plan abstraction -->
-              <!-- Outer perimeter -->
-              <rect x="100" y="100" width="360" height="260" fill="none" stroke="rgba(245,240,230,0.28)" stroke-width="3"/>
-              <!-- Inner rooms -->
-              <line x1="220" y1="100" x2="220" y2="230" stroke="rgba(245,240,230,0.2)" stroke-width="2"/>
-              <line x1="100" y1="230" x2="340" y2="230" stroke="rgba(245,240,230,0.2)" stroke-width="2"/>
-              <line x1="340" y1="100" x2="340" y2="360" stroke="rgba(245,240,230,0.2)" stroke-width="2"/>
-              <!-- Window indicators -->
-              <rect x="140" y="98" width="40" height="5" fill="rgba(207,221,255,0.5)"/>
-              <rect x="250" y="98" width="60" height="5" fill="rgba(207,221,255,0.5)"/>
-              <rect x="98"  y="140" width="5" height="50" fill="rgba(207,221,255,0.5)"/>
-              <!-- Dimension lines -->
-              <line x1="100" y1="400" x2="460" y2="400" stroke="rgba(245,240,230,0.2)" stroke-width="1.5"/>
-              <line x1="100" y1="394" x2="100" y2="406" stroke="rgba(245,240,230,0.2)" stroke-width="1.5"/>
-              <line x1="460" y1="394" x2="460" y2="406" stroke="rgba(245,240,230,0.2)" stroke-width="1.5"/>
-              <!-- Furniture suggestion (circles = plants, rects = furniture) -->
-              <circle cx="160" cy="160" r="14" fill="rgba(93,107,80,0.4)"/>
-              <circle cx="280" cy="290" r="20" fill="rgba(93,107,80,0.3)"/>
-              <rect x="360" y="240" width="60" height="40" rx="2" fill="rgba(245,240,230,0.1)"/>
-            </svg>
-          </div>
-
-          <div class="cs-body">
-            <div>
-              <div class="cs-meta">
-                <span class="cs-num">03</span>
-                <span class="cs-index-label">RGS Design &amp; Planning · 2023–2024</span>
-              </div>
-              <h2 class="cs-title">Multi-Family Residential Design Portfolio</h2>
-              <p class="cs-company">Junior Designer</p>
-              <p class="cs-desc">
-                Full-lifecycle design ownership across a portfolio of multi-family residential projects —
-                managing timelines, contractor communications, and deliverables from concept development
-                through construction documentation. Work included spatial planning, material and finish
-                selection, and detailed construction drawings.
-              </p>
-              <p class="cs-desc" style="margin-top:-0.75rem;">
-                Led client-facing design development presentations, procurement coordination, and budget
-                tracking — developing fluency in translating spatial and technical constraints into design
-                solutions that worked within real-world project parameters.
-              </p>
-              <div class="cs-outcomes">
-                <span class="cs-outcomes-label">Key outcomes</span>
-                <ul>
-                  <li>Delivered concept-to-documentation across multiple concurrent residential projects</li>
-                  <li>Led material selection, FF&E procurement, and budget management</li>
-                  <li>Built proficiency in construction documentation and contractor coordination</li>
-                </ul>
-              </div>
-            </div>
-            <div class="cs-footer">
-              <div class="tags" style="margin-top:0;">
-                <span class="tag">Interior Design</span>
-                <span class="tag">Spatial Planning</span>
-                <span class="tag">Construction Docs</span>
-                <span class="tag">Residential</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
     </div>
   </main>
 
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-col">
-        <span class="label-muted">Contact</span>
+    <footer>
+    <div class="footer-inner">
+      <div class="footer-contact">
         <a href="mailto:neelambari.am@gmail.com">neelambari.am@gmail.com</a>
-        <a href="tel:6477663909">647-766-3909</a>
-        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn</a>
+        <span class="f-sep">·</span>
+        <a href="https://www.linkedin.com/in/neela-m" target="_blank" rel="noopener">LinkedIn ↗</a>
       </div>
-      <div class="footer-col">
-        <span class="label-muted">Navigate</span>
+      <div class="footer-nav">
         <a href="case-studies.html">Work</a>
+        <span class="f-sep">·</span>
         <a href="cv.html">Resume</a>
+        <span class="f-sep">·</span>
         <a href="blog.html">Writing</a>
-      </div>
-      <div class="footer-col">
-        <span class="label-muted">Credentials</span>
-        <p>LEED Green Associate</p>
-        <p>BDes Environmental Design — OCAD</p>
-        <p>BA Philosophy — Delhi University</p>
-      </div>
-      <div class="footer-brand">
-        <p class="footer-name">Neela Madhu</p>
-        <p class="footer-sub">Toronto, Canada · 2026</p>
       </div>
     </div>
   </footer>
